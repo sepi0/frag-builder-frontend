@@ -66,7 +66,8 @@ export default class Configuration extends React.Component {
         }
     }
 
-    sendOrder = async () => {
+    sendOrder = async (event, callback) => {
+        event.preventDefault()
         const orderId = (Math.floor(1000000 + Math.random() * 9000000)).toString()
         const json = JSON.stringify({
             orderId: orderId,
@@ -84,8 +85,6 @@ export default class Configuration extends React.Component {
                 }
             }
         )
-        
-        alert("Objednavka uspesne odoslana.")
         console.log(response.data.data)
     }
 
@@ -154,17 +153,19 @@ export default class Configuration extends React.Component {
                     </div>
 
                     <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        <label>e-mail</label>
                         <input 
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                            placeholder="email"
+                            placeholder="e-mail"
                             onChange={this.handleEmail}></input>
+                        <label>telefonne cislo</label>
                         <input 
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                            placeholder="cislo"
+                            placeholder="telefonne cislo"
                             onChange={this.handlePhone}></input>
                         <button 
                             className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-                            onClick={this.sendOrder}>odoslat objednavku</button>
+                            onClick={(event) => this.sendOrder(event, alert("Objednavka uspesne odoslana."))}>odoslat objednavku</button>
                     </form>
                 </div>
             </div>
