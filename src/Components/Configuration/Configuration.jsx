@@ -89,44 +89,52 @@ export default class Configuration extends React.Component {
     }
 
     renderProducts = () => {
-        const products =[]
-        this.state.fetchedData.map(item => products.push(
-            <div className="flex flex-row justify-between bg-white border border-gray-400 rounded shadow m-3 sm:container mx-auto">
-                <p>{item.model.toUpperCase()}</p>
-                <button 
-                    className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-blue-400 rounded shadow" 
-                    onClick={() => this.handleCart("add", item)}>{item.price} EUR</button>
+        return (
+            <div>
+                {this.state.fetchedData.map(item => 
+                    <div className="flex flex-col justify-between bg-white border border-gray-400 rounded shadow m-3 sm:container mx-auto">
+                        <p>{item.model.toUpperCase()}</p>
+                        <button 
+                            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold w-110px py-2 px-4 border border-blue-400 rounded shadow" 
+                            onClick={() => this.handleCart("add", item)}>{item.price} EUR</button>
+                    </div>
+                )}
             </div>
-        ))
-        return products
+        )
     }
 
     renderCart = () => {
-        const cart = []
-        this.state.inCart.map(item => cart.push(
-            <div className="flex flex-row justify-between bg-white border border-gray-400 rounded shadow m-1 p-1 sm:container mx-auto">
-                {item.model.toUpperCase()}
-                <button 
-                    className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-                    onClick={() => this.handleCart("remove", item)}>X</button>
+        return (
+            <div>
+                {this.state.inCart.map(item => 
+                    <div className="flex flex-row justify-between bg-white border border-gray-400 rounded shadow m-1 p-1 sm:container mx-auto">
+                        {item.model.toUpperCase()}
+                        <button 
+                            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+                            onClick={() => this.handleCart("remove", item)}>
+                        X</button>
+                    </div>
+                )}
             </div>
-        ))
-        return cart
+        )
     }
 
     renderInputFields = () => {
-        const inputFields = []
-        this.productTypes.map((product, key) => {
-            inputFields.push(
-                <input 
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                    name={product}
-                    placeholder={product}
-                    key={key} 
-                    onChange={(event) => this.handleSearch(event, product)}></input>
-            )
-        })
-        return inputFields
+        return (
+            <div>
+                {this.productTypes.map((product, key) => 
+                    <div>
+                        <input 
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline m-1" 
+                            name={product}
+                            placeholder={product}
+                            key={key} 
+                            onChange={(event) => this.handleSearch(event, product)}
+                        />
+                    </div>
+                )}
+            </div>
+        )
     }
 
     render() {
@@ -164,7 +172,7 @@ export default class Configuration extends React.Component {
                             placeholder="telefonne cislo"
                             onChange={this.handlePhone}></input>
                         <button 
-                            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+                            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow m-1"
                             onClick={(event) => this.sendOrder(event, alert("Objednavka uspesne odoslana."))}>odoslat objednavku</button>
                     </form>
                 </div>
