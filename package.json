@@ -9,11 +9,12 @@
     "axios": "^0.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "tailwindcss": "^1.8.12"
   },
   "scripts": {
-    "build:css": "tailwind build src/index.css -o dist/index.css",
+    "build:css": "tailwind build src/tailwind.css -o src/index.css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
