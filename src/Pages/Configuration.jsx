@@ -90,7 +90,7 @@ export default class Configuration extends React.Component {
     renderProducts = () => {
         return (
             <div className="overflow-auto">
-                <table className="overflow-y-scroll h-full w-full">
+                <div className="h-full w-full">
                     {this.state.fetchedData.map((item, key) => 
                         <div key={item+key} className="flex flex-col justify-between bg-white border border-gray-400 rounded shadow m-3 w-full sm:container mx-auto ">
                             <p className="font-open-sans">{item.model.toUpperCase()}</p>
@@ -100,7 +100,7 @@ export default class Configuration extends React.Component {
                             {item.price} EUR</button>
                         </div>
                     )}
-                </table>
+                </div>
             </div>
         )
     }
@@ -108,7 +108,7 @@ export default class Configuration extends React.Component {
     renderCart = () => {
         return (
             <div className="overflow-auto">
-                <table className="lg:overflow-y-scroll h-full w-full">
+                <div className="h-full w-full">
                     {this.state.inCart.map((item, key) => 
                         <div key={item+key} className="flex flex-row justify-between content-center bg-white border rounded shadow m-1 sm:container mx-auto">
                             <p className="self-center">{item.model.toUpperCase()}</p>
@@ -118,7 +118,7 @@ export default class Configuration extends React.Component {
                             </button>
                         </div>
                     )}
-                </table>
+                </div>
             </div>
         )
     }
