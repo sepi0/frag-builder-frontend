@@ -5,15 +5,15 @@ import Header from '../Components/Header'
 export default class Configuration extends React.Component {
 
     productTypes = [
+        "mobo", 
         "cpu", 
         "gpu", 
-        "mobo", 
         "ram", 
         "psu", 
+        "ssd",
+        "hdd", 
         "case", 
         "cooling", 
-        "hdd", 
-        "ssd"
     ]
 
     constructor(props){
@@ -24,7 +24,8 @@ export default class Configuration extends React.Component {
             search: [],
             phone: "",
             email: "",
-            totalPrice: 0
+            totalPrice: 0,
+            browsing: "cpu"
         }
     }
 
@@ -35,8 +36,12 @@ export default class Configuration extends React.Component {
         this.setState({ fetchedData: data })
     }
 
-    handleSearch = (event, productType) => {
-        this.setState({ search: event.target.value }, () => this.fetchData(productType))
+    handleBrowsing = productType => {
+        this.setState({ browsing: productType })
+    }
+
+    handleSearch = event => {
+        this.setState({ search: event.target.value }, () => this.fetchData(this.state.browsing))
     }
 
     handleEmail = event => {
@@ -87,53 +92,50 @@ export default class Configuration extends React.Component {
         )
     }
 
-    renderProducts = () => {
-        return (
-            <div className="overflow-auto">
-                <div className="h-full w-full">
-                    {this.state.fetchedData.map((item, key) => 
-                        <div key={item+key} className="flex flex-col justify-between bg-white border border-gray-400 rounded shadow m-3 w-full sm:container mx-auto ">
-                            <p className="font-open-sans">{item.model.toUpperCase()}</p>
-                            <button 
-                                className="bg-white hover:bg-indigo-300 hover:text-white text-gray-800 font-semibold w-110px py-2 px-4 border border-gray-300 rounded shadow" 
-                                onClick={() => this.handleCart("add", item)}>
-                            {item.price} EUR</button>
-                        </div>
-                    )}
-                </div>
-            </div>
-        )
+    goBack = () => {
+        this.setState({ browsing: "" })
+        this.setState({ fetchedData: [] })
     }
 
-    renderCart = () => {
+    showProducts = () => {
         return (
-            <div className="overflow-auto">
-                <div className="h-full w-full">
-                    {this.state.inCart.map((item, key) => 
-                        <div key={item+key} className="flex flex-row justify-between content-center bg-white border rounded shadow m-1 sm:container mx-auto">
-                            <p className="self-center">{item.model.toUpperCase()}</p>
-                            <button 
-                                className="bg-white hover:bg-red-500 hover:text-white text-gray-800 font-bold py-2 px-4 border border-gray-400 rounded shadow"
-                                onClick={() => this.handleCart("remove", item)}>x
-                            </button>
+            <div 
+                id="vysledky"
+                className="
+                    grid 
+                    grid-cols-2 
+                    gap-4
+                    md:grid-cols-3 
+                    lg:grid-cols-4 
+                    xl:grid-cols-6 
+                    container
+                    md:mx-auto
+                    lg:mx-auto
+                    xl:mx-auto
+                    my-10">
+                {this.state.fetchedData.map(item => 
+                    <div 
+                        className="
+                            grid 
+                            grid-col-1 
+                            text-center 
+                            p-10 
+                            border-1 
+                            shadow">
+                        <h3>{item.model.toUpperCase()}</h3>
+                        <div 
+                            id="price-button"
+                            className="
+                                transition duration-300 ease-in-out
+                                p-2 
+                                border 
+                                border-purple-600
+                                rounded-full
+                                hover:bg-purple-600
+                                hover:text-white
+                                cursor-pointer">
+                            {item.price} EUR
                         </div>
-                    )}
-                </div>
-            </div>
-        )
-    }
-
-    renderInputFields = () => {
-        return (
-            <div>
-                {this.productTypes.map((product, key) => 
-                    <div key={product + key}>
-                        <input 
-                            className="bg-white-200 appearance-none border-2 border-gray-200 rounded w-full m-2 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
-                            name={product}
-                            placeholder={product}
-                            onChange={(event) => this.handleSearch(event, product)}
-                        />
                     </div>
                 )}
             </div>
@@ -142,48 +144,80 @@ export default class Configuration extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="flex flex-col">
                 <Header/>
-                <div className="flex flex-row justify-center my-10">
-                    <h1 className="lg:text-6xl md:text-3xl font-archivo">FRAG KONFIGURÁTOR</h1>
+                
+                <div 
+                    id="nadpis" 
+                    className="
+                        flex 
+                        flex-row 
+                        justify-center 
+                        my-10">
+                    <h1 
+                        className="
+                            lg:text-6xl 
+                            md:text-3xl 
+                            font-archivo">
+                        KONFIGURÁTOR
+                    </h1>
                 </div>
-                <div className="bg-gray-100 p-10">
-                    <div className="flex flex-col lg:flex-row justify-between lg:h-big h-big sm:container mx-auto">
-                        <div id="search"className="flex flex-col lg:w-1/3 m-1 bg-white max-h-full shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                            <h2 className="font-open-sans text-lg text-black text-center">Vyhľadať komponent</h2>
-                            <form className="">
-                                {this.renderInputFields()}
-                           </form>
-                        </div>
-                        
-                        <div id="results" className="flex flex-col lg:w-1/3 m-1 bg-white max-h-full shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                            <h2 className="font-open-sans text-lg text-black text-center">Výsledky vyhľadávania</h2>
-                            {this.renderProducts()}
-                        </div>
+                <div 
+                    id="vyhladavanie"
+                    className="
+                        flex 
+                        flex-col 
+                        self-center">
+                    <h1 className="text-center">Vyhladaj CPU</h1>
+                    <input 
+                        className="shadow"
+                        onChange={this.handleSearch}>    
+                    </input>
+                    <h1 
+                        className="
+                            text-xl
+                            md:text-2xl
+                            lg:text-4xl
+                            font-mulish
+                        ">
+                        VYBER SI PROCESOR
+                    </h1>
+                </div>
 
-                        <div id="cart" className="flex flex-col lg:w-1/3 m-1 bg-white max-h-full shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                            <h1 className="font-open-sans text-lg text-black text-center">Nákupný košík</h1>
-                            <h2 className="font-open-sans text-center">Celkovo: {this.state.total} EUR</h2>
-                            <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                                <label className="font-open-sans block text-gray-700 text-sm font-bold my-2">E-mail</label>
-                                <input 
-                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                    placeholder="e-mail"
-                                    onChange={this.handleEmail}>
-                                </input>
-                                <label className="block text-gray-700 text-sm font-bold my-2">Telefónne číslo</label>
-                                <input 
-                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                    placeholder="telefonne cislo"
-                                    onChange={this.handlePhone}>
-                                </input>
-                                <button 
-                                    className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow my-2"
-                                    onClick={(event) => this.sendOrder(event, alert("Objednavka uspesne odoslana."))}>Odoslať objednávku
-                                </button>
-                            </form>
-                            {this.renderCart()}
-                        </div>
+                {this.showProducts()}
+                
+                <div 
+                    id="naspat-dalej"
+                    className="
+                        flex 
+                        flex-row 
+                        justify-center 
+                        my-10">
+                    <div className="
+                        transition duration-300 ease-in-out 
+                        mx-5 
+                        p-3 
+                        border-2 border-purple-600 
+                        text-black 
+                        hover:bg-purple-600 
+                        hover:text-white 
+                        cursor-pointer 
+                        font-archivo 
+                        rounded-full">
+                        BACK
+                    </div>
+                    <div className="
+                        transition duration-300 ease-in-out 
+                        mx-5 
+                        p-3 
+                        border-2 border-purple-600 
+                        text-black 
+                        hover:bg-purple-600 
+                        hover:text-white 
+                        cursor-pointer 
+                        font-archivo 
+                        rounded-full">
+                        NEXT
                     </div>
                 </div>
             </div>
