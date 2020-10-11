@@ -1,4 +1,4 @@
-import { faShoppingBasket, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import Header from '../Components/Header';
@@ -75,7 +75,9 @@ function Card(props) {
                                 font-bold 
                                 text-4xl 
                                 text-black 
-                                mb-2">{props.model}</h2>
+                                mb-2">
+                            {props.model}
+                        </h2>
                         <p>{props.mobo}</p>
                         <p>{props.cpu}</p>
                         <p>{props.gpu}</p>
