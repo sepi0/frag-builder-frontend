@@ -9,10 +9,14 @@ module.exports = {
     fontFamily: {
       'open-sans': ['Open Sans', 'sans-serif'],
       'pacifico': ['Pacifico', 'cursive'],
-      'archivo': ['Archivo Black', 'sans-serif']
+      'archivo': ['Archivo Black', 'sans-serif'],
+      'cairo': ['Cairo', 'sans-serif'],
+      'mulish': ['Mulish', 'sans-serif']
     },
     height: {
-      big: '600px'
+      'big': '600px',
+      'big-2': '1200px',
+      'big-3': '1600px'
     }
   },
   variants: {},
