@@ -3,25 +3,52 @@ import { Link } from 'react-router-dom'
 
 export default function Header() {
     return (
-        <nav className="font-cairo flex items-center justify-between flex-wrap  p-4 mb-10 w-big">
+        <nav className="font-mulish flex items-center justify-between flex-wrap  p-4 mb-10 w-big">
             <div>
                 <p>FRAG COMPUTERS</p>
             </div>
             <div className="flex items-center flex-shrink-0 text-black mr-6">
                 <Link to="/zostavy">
-                    <button className="transition duration-500 ease-in-out font-bold py-2 px-2 mx-2 border-2 border-white rounded hover:bg-white hover:text-black hover:underline focus:outline-none">
-                        ZOSTAVY
-                    </button>
+                <h1 
+                    className="
+                        font-bold 
+                        py-2 px-2 
+                        mx-2 
+                        border-2 
+                        border-white 
+                        rounded 
+                        hover:bg-white 
+                        hover:text-purple-600">
+                    ZOSTAVY
+                </h1>
                 </Link>
                 <Link to="/konfigurator">
-                    <button className="transition duration-500 ease-in-out font-bold py-2 px-2 mx-2 border-2 border-white rounded hover:bg-white hover:text-black hover:underline focus:outline-none">
-                        KONFIGURÁTOR
-                    </button>
+                <h1 
+                    className="
+                        font-bold 
+                        py-2 px-2 
+                        mx-2 
+                        border-2 
+                        border-white 
+                        rounded 
+                        hover:bg-white 
+                        hover:text-purple-600">
+                    KONFIGURÁTOR
+                </h1>
                 </Link>
                 <Link to="/kontakt">
-                    <button className="transition duration-500 ease-in-out font-bold py-2 px-2 mx-2 border-2 border-white rounded hover:bg-white hover:text-black hover:underline focus:outline-none">
+                    <h1 
+                        className="
+                            font-bold 
+                            py-2 px-2 
+                            mx-2 
+                            border-2 
+                            border-white 
+                            rounded 
+                            hover:bg-white 
+                            hover:text-purple-600">
                         KONTAKT
-                    </button>
+                    </h1>
                 </Link>
             </div>
         </nav>
