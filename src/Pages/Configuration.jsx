@@ -102,6 +102,7 @@ export default class Configuration extends React.Component {
             <div 
                 id="vysledky"
                 className="
+                    self-center
                     grid 
                     grid-cols-2 
                     gap-4
@@ -116,6 +117,7 @@ export default class Configuration extends React.Component {
                 {this.state.fetchedData.map(item => 
                     <div 
                         className="
+                            font-mulish
                             grid 
                             grid-col-1 
                             text-center 
@@ -133,8 +135,9 @@ export default class Configuration extends React.Component {
                                 rounded-full
                                 hover:bg-purple-600
                                 hover:text-white
+                                self-center
                                 cursor-pointer">
-                            {item.price} EUR
+                            {item.price} €
                         </div>
                     </div>
                 )}
@@ -168,18 +171,18 @@ export default class Configuration extends React.Component {
                         flex 
                         flex-col 
                         self-center">
-                    <h1 className="text-center">Vyhladaj CPU</h1>
+                    <h1 className="text-center font-cairo">Vyhladaj CPU</h1>
                     <input 
-                        className="shadow"
-                        onChange={this.handleSearch}>    
+                        className="shadow m-3 p-1"
+                        onChange={this.handleSearch}
+                        placeholder="napíš názov procesora">    
                     </input>
                     <h1 
                         className="
                             text-xl
                             md:text-2xl
                             lg:text-4xl
-                            font-mulish
-                        ">
+                            font-mulish">
                         VYBER SI PROCESOR
                     </h1>
                 </div>
@@ -192,6 +195,7 @@ export default class Configuration extends React.Component {
                         flex 
                         flex-row 
                         justify-center 
+                        font-mulish 
                         my-10">
                     <div className="
                         transition duration-300 ease-in-out 
@@ -201,8 +205,7 @@ export default class Configuration extends React.Component {
                         text-black 
                         hover:bg-purple-600 
                         hover:text-white 
-                        cursor-pointer 
-                        font-archivo 
+                        cursor-pointer  
                         rounded-full">
                         BACK
                     </div>
@@ -215,7 +218,6 @@ export default class Configuration extends React.Component {
                         hover:bg-purple-600 
                         hover:text-white 
                         cursor-pointer 
-                        font-archivo 
                         rounded-full">
                         NEXT
                     </div>
