@@ -14,7 +14,7 @@ const BuildCards = () => {
                     model={key[1].model}
                     mobo={key[1].zakladnaDoska}
                     cpu={key[1].procesor}
-                    cpu={key[1].grafickaKarta}
+                    gpu={key[1].grafickaKarta}
                     ram={key[1].ram}
                     ssd={key[1].ssd}
                     hdd={key[1].hdd}
@@ -119,7 +119,7 @@ function Card(props) {
                             my-2 mx-10
                             rounded-full ">
                         <p className="self-center">
-                            KÚPIŤ
+                            KÚPIŤ {props.cena}€
                             <FontAwesomeIcon className="mx-2" icon={faShoppingCart}/>
                         </p>
                     </div>
