@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from 'axios'
 import Header from '../Components/Header'
-
 import { faArrowLeft, faArrowRight, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -147,8 +146,9 @@ export default class Configuration extends React.Component {
                             grid-col-1 
                             text-center 
                             p-10 
+                            bg-white
                             border-1 
-                            shadow">
+                            shadow full">
                         <h3>{item.model.toUpperCase()}</h3>
                         <div 
                             id="price-button"
@@ -219,9 +219,12 @@ export default class Configuration extends React.Component {
 
     render() {
         return (
-            <div className="flex flex-col">
+            <div 
+                className="
+                    flex 
+                    flex-col
+                    h-big-2">
                 <Header/>
-                
                 <div 
                     id="nadpis" 
                     className="
@@ -229,13 +232,19 @@ export default class Configuration extends React.Component {
                         flex-row 
                         justify-center 
                         my-10">
-                    <h1 
-                        className="
-                            lg:text-6xl 
-                            md:text-3xl 
-                            font-archivo">
-                        ./KONFIGURÁTOR
-                    </h1>
+                    <div>
+                        <h1 
+                            className="
+                                lg:text-6xl 
+                                md:text-3xl 
+                                font-archivo
+                                h-64
+                                bg-spikeAquamarineBlue
+                                bg-no-repeat
+                                bg-contain">
+                            ./KONFIGURÁTOR
+                        </h1>
+                    </div>
                 </div>
                 <div 
                     id="vyhladavanie"
@@ -243,8 +252,17 @@ export default class Configuration extends React.Component {
                         flex 
                         flex-col 
                         self-center">
-                    <h1 className="text-center font-cairo">Vyhľadávanie</h1>
-                    <div className="flex flex-row justify-center">
+                    <h1 
+                        className="
+                            text-center 
+                            font-cairo">
+                        Vyhľadávanie
+                    </h1>
+                    <div 
+                        className="
+                            flex 
+                            flex-row 
+                            justify-center">
                         <FontAwesomeIcon className="self-center" icon={faSearch}></FontAwesomeIcon>
                         <input 
                             className="shadow m-3 p-1"
@@ -257,11 +275,17 @@ export default class Configuration extends React.Component {
                             text-xl
                             md:text-2xl
                             lg:text-4xl
+                            py-5
                             font-mulish">
                         Vyber si {this.state.configuratorProgress[this.state.configuratorStep]}
                     </h1>
                 </div>
-                {this.showProducts()}
+                <div 
+                    className="
+                        overflow-y-scroll 
+                        h-big-2">
+                    {this.showProducts()}
+                </div>
                 {this.nextAndBackButtons()}
             </div>
         )

@@ -5,7 +5,11 @@ module.exports = {
   },
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: theme => ({
+        'spikeAquamarineBlue': "url('https://i.ibb.co/ngCzdxv/obrazok.png')" 
+      })
+    },
     fontFamily: {
       'open-sans': ['Open Sans', 'sans-serif'],
       'pacifico': ['Pacifico', 'cursive'],
@@ -17,7 +21,7 @@ module.exports = {
       'big': '600px',
       'big-2': '1200px',
       'big-3': '1600px'
-    }
+    },
   },
   variants: {},
   plugins: [],

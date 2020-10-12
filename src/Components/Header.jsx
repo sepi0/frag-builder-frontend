@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 export default function Header() {
     return (
-        <nav className="font-mulish flex items-center justify-between flex-wrap  p-4 mb-10 w-big">
+        <nav className="font-mulish font-bold flex items-center justify-between flex-wrap  p-4 mb-10 w-big">
             <div>
-                <p>FRAG COMPUTERS</p>
+                <h1>.FRAG COMPUTERS</h1>
             </div>
             <div className="flex items-center flex-shrink-0 text-black mr-6">
                 <Link to="/zostavy">

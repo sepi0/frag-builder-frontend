@@ -3,7 +3,34 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import Header from '../Components/Header';
 
+const buildsJson = require('../zostavy.json')
+
+const BuildCards = () => {
+    let buildsArray = []
+    buildsJson.map(zostavy => {
+        for (let key of Object.entries(zostavy)) {
+            buildsArray.push(
+                <Card 
+                    model={key[1].model}
+                    mobo={key[1].zakladnaDoska}
+                    cpu={key[1].procesor}
+                    cpu={key[1].grafickaKarta}
+                    ram={key[1].ram}
+                    ssd={key[1].ssd}
+                    hdd={key[1].hdd}
+                    psu={key[1].zdroj}
+                    case={key[1].skrinka}
+                    cooling={key[1].chladenie}
+                    cena={key[1].cena}
+                />
+            )
+        }
+    })
+    return buildsArray
+}
+
 export default function Builds() {
+    
     return (
         <div>
             <Header/>
@@ -18,7 +45,11 @@ export default function Builds() {
                     className="
                         lg:text-6xl 
                         md:text-3xl 
-                        font-archivo">
+                        font-archivo
+                        h-64
+                        bg-spikeAquamarineBlue
+                        bg-no-repeat
+                        bg-contain">
                     ./ZOSTAVY
                 </h1>
             </div>
@@ -33,24 +64,7 @@ export default function Builds() {
                     md:mx-auto
                     lg:mx-auto
                     xl:mx-auto">
-                <Card model="Intel TYPE-C" mobo="" cpu="" gpu="" ram="" ssd="" hdd="" psu="" case="" cooling=""/>
-                <Card model="Intel TYPE-B" mobo="" cpu="" gpu="" ram="" ssd="" hdd="" psu="" case="" cooling=""/>
-                <Card model="Intel TYPE-A" mobo="" cpu="" gpu="" ram="" ssd="" hdd="" psu="" case="" cooling=""/>
-                <Card model="Intel TYPE-S" mobo="" cpu="" gpu="" ram="" ssd="" hdd="" psu="" case="" cooling=""/>
-                <Card 
-                    model="AMD TYPE-C" 
-                    mobo="Základná doska: ASUS Prime B450M-K" 
-                    cpu="Procesor: Ryzen 3 3200G" 
-                    gpu="Grafická karta: BEZ GPU" 
-                    ram="RAM: HyperX 8GB DDR4 3200MHz Cl16 Fury" 
-                    ssd="SSD: ADATA XPG 512GB" 
-                    hdd="HDD: BEZ HDD" 
-                    psu="Zdroj: SilverStone Strider 400W" 
-                    case="Skrinka: CoolerMaster MasterBox Q300L" 
-                    cooling=""/>
-                <Card model="AMD TYPE-B" mobo="" cpu="" gpu="" ram="" ssd="" hdd="" psu="" case="" cooling=""/>
-                <Card model="AMD TYPE-A" mobo="" cpu="" gpu="" ram="" ssd="" hdd="" psu="" case="" cooling=""/>
-                <Card model="AMD TYPE-S" mobo="" cpu="" gpu="" ram="" ssd="" hdd="" psu="" case="" cooling=""/>
+                {BuildCards()}
             </div>
         </div>
     )
