@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Header() {
+export default function Navbar() {
     return (
         <nav 
             className="
@@ -15,7 +15,9 @@ export default function Header() {
                 mb-10 
                 w-big">
             <div>
-                <h1>.FRAG COMPUTERS</h1>
+                <Link to="/">
+                    <h1>.FRAG COMPUTERS</h1>
+                </Link>
             </div>
             <div 
                 className="
@@ -48,7 +50,7 @@ export default function Header() {
                         border-white 
                         rounded 
                         hover:bg-white 
-                        hover:text-purple-600">
+                        hover:text-aquamarine-500">
                     KONFIGURÁTOR
                 </h1>
                 </Link>

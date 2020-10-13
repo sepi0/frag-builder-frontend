@@ -1,7 +1,7 @@
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import Header from '../Components/Header';
+import Navbar from '../Components/Navbar';
 
 const buildsJson = require('../zostavy.json')
 
@@ -29,11 +29,72 @@ const BuildCards = () => {
     return buildsArray
 }
 
+function Card(props) {
+    return (
+        <div 
+            className="
+                shadow-lg 
+                rounded">
+            <div 
+                className="
+                    px-6 py-4
+                    grid 
+                    grid-cols-1">
+                <div>
+                    <div 
+                        className="
+                            font-cairo">
+                        <h2 
+                            className="
+                                font-archivo 
+                                font-bold 
+                                text-4xl 
+                                text-black 
+                                mb-2">
+                            {props.model}
+                        </h2>
+                        <p>‣{props.mobo}</p>
+                        <p>‣{props.cpu}</p>
+                        <p>‣{props.gpu}</p>
+                        <p>‣{props.ram}</p>
+                        <p>‣{props.ssd}</p>
+                        <p>‣{props.hdd}</p>
+                        <p>‣{props.psu}</p>
+                        <p>‣{props.case}</p>
+                        <p>‣{props.cooling}</p>
+                    </div>
+                    <div 
+                        className="
+                            font-mulish
+                            self-center
+                            text-center
+                            cursor-pointer
+                            transition duration-500 ease-in-out 
+                            bg-white-700 
+                            text-black 
+                            border-2 
+                            border-indigo-500 
+                            hover:bg-indigo-500
+                            hover:text-white 
+                            py-2 px-1 
+                            my-2 mx-10
+                            rounded-full ">
+                        <p className="self-center">
+                            KÚPIŤ {props.cena}€
+                            <FontAwesomeIcon className="mx-2" icon={faShoppingCart}/>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
 export default function Builds() {
     
     return (
         <div>
-            <Header/>
+            <Navbar/>
             <div 
                 id="nadpis" 
                 className="
@@ -43,11 +104,10 @@ export default function Builds() {
                     my-10">
                 <h1 
                     className="
-                        lg:text-6xl 
-                        md:text-3xl 
+                        text-6xl 
                         font-archivo
                         h-64
-                        bg-spikeAquamarineBlue
+                        bg-spikeRedLime
                         bg-no-repeat
                         bg-contain">
                     ./ZOSTAVY
@@ -65,65 +125,6 @@ export default function Builds() {
                     lg:mx-auto
                     xl:mx-auto">
                 {BuildCards()}
-            </div>
-        </div>
-    )
-}
-
-function Card(props) {
-    return (
-        <div 
-            className="
-                shadow-lg 
-                rounded">
-            <div 
-                className="
-                    px-6 py-4
-                    grid 
-                    grid-cols-1">
-                <div>
-                    <div className="divide-y divide-gray-400">
-                        <h2 
-                            className="
-                                font-archivo 
-                                font-bold 
-                                text-4xl 
-                                text-black 
-                                mb-2">
-                            {props.model}
-                        </h2>
-                        <p>{props.mobo}</p>
-                        <p>{props.cpu}</p>
-                        <p>{props.gpu}</p>
-                        <p>{props.ram}</p>
-                        <p>{props.ssd}</p>
-                        <p>{props.hdd}</p>
-                        <p>{props.psu}</p>
-                        <p>{props.case}</p>
-                        <p>{props.cooling}</p>
-                    </div>
-                    <div 
-                        className="
-                            font-mulish
-                            self-center
-                            text-center
-                            cursor-pointer
-                            transition duration-500 ease-in-out 
-                            bg-white-700 
-                            text-black 
-                            border-2 
-                            border-purple-600 
-                            hover:bg-purple-400
-                            hover:text-white 
-                            py-2 px-1 
-                            my-2 mx-10
-                            rounded-full ">
-                        <p className="self-center">
-                            KÚPIŤ {props.cena}€
-                            <FontAwesomeIcon className="mx-2" icon={faShoppingCart}/>
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     )

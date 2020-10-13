@@ -7,8 +7,21 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: theme => ({
-        'spikeAquamarineBlue': "url('https://i.ibb.co/ngCzdxv/obrazok.png')" 
-      })
+        'spikeAquamarineBlue': "url('https://i.ibb.co/ngCzdxv/obrazok.png')",
+        'spikeRedLime': "url('https://i.ibb.co/bRHZxgW/Group-2.png')"
+      }),
+      colors: {
+        aquamarine: {
+          '100': '#BEFFED',
+          '300': '#74FFD9',
+          '500': '#00FFBA',
+        },
+        aqua: {
+          '100': '#AEFFF6',
+          '300': '#74FFF8',
+          '500': '#00FFF8',
+        }
+      }
     },
     fontFamily: {
       'open-sans': ['Open Sans', 'sans-serif'],

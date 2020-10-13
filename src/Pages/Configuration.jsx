@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
-import Header from '../Components/Header'
-import { faArrowLeft, faArrowRight, faSearch } from '@fortawesome/free-solid-svg-icons'
+import Navbar from '../Components/Navbar'
+import { faArrowLeft, faArrowRight, faPollH, faSearch, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default class Configuration extends React.Component {
@@ -39,13 +39,16 @@ export default class Configuration extends React.Component {
                 6: "HDD-čko",
                 7: "Skrinku",
                 8: "Chladenie",
-            }
+                9: "Výsledná zostava"
+            },
+            isOnFirstStep: true,
+            isOnLastStep: false,
         }
     }
 
     handleProgress = (operation) => {
         let step = this.state.configuratorStep
-        if (operation === "next") {
+        if (operation === "next" || operation === "result") {
             this.flushData()
             step += 1
             this.setState({ configuratorStep: step })
@@ -83,7 +86,7 @@ export default class Configuration extends React.Component {
     handleTotal = () => {
         let total = 0;
         this.state.inCart.map(item => total += item.price)
-        this.setState({ total: total.toFixed(2) })
+        this.setState({ totalPrice: total.toFixed(2) })
     }
 
     handleCart = (operation, product) => {
@@ -120,67 +123,113 @@ export default class Configuration extends React.Component {
         )
     }
 
-    showProducts = () => {
-        return (
-            <div 
-                id="vysledky"
-                className="
-                    self-center
-                    grid 
-                    grid-cols-2 
-                    gap-4
-                    md:grid-cols-3 
-                    lg:grid-cols-4 
-                    xl:grid-cols-6 
-                    container
-                    md:mx-auto
-                    lg:mx-auto
-                    xl:mx-auto
-                    my-10">
-                {this.state.fetchedData.map((item, key) => 
-                    <div 
-                        key={key}
-                        className="
-                            font-mulish
-                            grid 
-                            grid-col-1 
-                            text-center 
-                            p-10 
-                            bg-white
-                            border-1 
-                            shadow full">
-                        <h3>{item.model.toUpperCase()}</h3>
-                        <div 
-                            id="price-button"
-                            onClick={() => this.handleCart("add", item)}
+    showFinalConfiguration = () => {
+        if (this.state.configuratorStep > 8) {
+            return (
+                <div 
+                    className="
+                        flex
+                        flex-col
+                        self-center
+                        w-big
+                        container
+                        md:mx-auto
+                        lg:mx-auto
+                        xl:mx-auto">
+                    {this.state.inCart.map(item => 
+                        <div
                             className="
-                                transition duration-300 ease-in-out
-                                p-2 
-                                border 
-                                border-purple-600
-                                rounded-full
-                                hover:bg-purple-600
-                                hover:text-white
+                                flex
+                                flex-row
+                                justify-between
+                                p-3
+                                m-1
+                                w-1/3
                                 self-center
-                                cursor-pointer">
-                            {item.price} €
+                                border
+                                shadow
+                                font-mulish
+                                font-bold">
+                            <p className="self-center mx-2">{item.model.toUpperCase()}</p>
+                            <div 
+                                onClick={() => this.handleCart("remove", item)}
+                                className="
+                                    self-center
+                                    text-center
+                                    bg-red-500
+                                    w-12
+                                    h-12
+                                    py-1
+                                    px-2
+                                    m-1
+                                    cursor-pointer
+                                    text-white
+                                    hover:text-black">
+                                <FontAwesomeIcon icon={faTrash}/>
+                            </div>
                         </div>
-                    </div>
-                )}
-            </div>
-        )
+                    )}
+                </div>
+            )
+        }
     }
 
-    nextAndBackButtons = () => {
-        return (
-            <div 
-                id="naspat-dalej"
-                className="
-                    flex 
-                    flex-row 
-                    justify-center 
-                    font-mulish 
-                    my-10">
+    showProducts = () => {
+        if (this.state.configuratorStep < 9) {
+            return (
+                <div 
+                    id="vysledky"
+                    className="
+                        self-center
+                        grid 
+                        grid-cols-2 
+                        gap-4
+                        md:grid-cols-3 
+                        lg:grid-cols-4 
+                        xl:grid-cols-6 
+                        container
+                        md:mx-auto
+                        lg:mx-auto
+                        xl:mx-auto
+                        my-10">
+                    {this.state.fetchedData.map((item, key) => 
+                        <div 
+                            key={key}
+                            className="
+                                font-mulish
+                                grid 
+                                grid-col-1 
+                                text-center 
+                                p-10 
+                                bg-white
+                                border-1 
+                                shadow full">
+                            <h3>{item.model.toUpperCase()}</h3>
+                            <div 
+                                id="price-button"
+                                onClick={() => this.handleCart("add", item)}
+                                className="
+                                    transition duration-300 ease-in-out
+                                    p-2 
+                                    border 
+                                    border-aquamarine-300
+                                    rounded-full
+                                    hover:bg-aquamarine-300
+                                    hover:text-white
+                                    self-center
+                                    cursor-pointer">
+                                {item.price} €
+                            </div>
+                        </div>
+                    )}
+                </div>
+            )
+        }
+    }
+
+    backButton = () => {
+        if (this.state.configuratorStep > 0) {
+            return (
                 <div 
                     onClick={() => this.handleProgress("back")}
                     className="
@@ -189,32 +238,61 @@ export default class Configuration extends React.Component {
                         transition duration-300 ease-in-out 
                         mx-5 
                         p-3 
-                        border-2 border-purple-600 
+                        border-2 border-aquamarine-500 
                         text-black 
-                        hover:bg-purple-600 
+                        hover:bg-aquamarine-500 
                         hover:text-white 
                         cursor-pointer  
                         rounded-full">
                     <FontAwesomeIcon className="mx-2 self-center" icon={faArrowLeft}/>
                     BACK
                 </div>
+            )
+        }
+    }
+
+    nextButton = () => {
+        if (this.state.configuratorStep < 8) {
+            return (
                 <div 
                     onClick={() => this.handleProgress("next")}
                     className="
                         transition duration-300 ease-in-out 
                         mx-5 
                         p-3 
-                        border-2 border-purple-600 
+                        border-2 border-indigo-600 
                         text-black 
-                        hover:bg-purple-600 
+                        hover:bg-indigo-600 
                         hover:text-white 
                         cursor-pointer 
                         rounded-full">
                     NEXT
                     <FontAwesomeIcon className="mx-2 self-center" icon={faArrowRight}/>
                 </div>
-            </div>
-        )
+            )
+        }
+    }
+
+    resultButton = () => {
+        if (this.state.configuratorStep === 8) {
+            return (
+                <div 
+                    onClick={() => this.handleProgress("result")}
+                    className="
+                        transition duration-300 ease-in-out 
+                        mx-5 
+                        p-3 
+                        border-2 border-indigo-600 
+                        text-black 
+                        hover:bg-indigo-600 
+                        hover:text-white 
+                        cursor-pointer 
+                        rounded-full">
+                    VYSLEDNA ZOSTAVA
+                    <FontAwesomeIcon className="mx-2 self-center" icon={faPollH}/>
+                </div>
+            )
+        }
     }
 
     render() {
@@ -224,7 +302,7 @@ export default class Configuration extends React.Component {
                     flex 
                     flex-col
                     h-big-2">
-                <Header/>
+                <Navbar/>
                 <div 
                     id="nadpis" 
                     className="
@@ -235,8 +313,8 @@ export default class Configuration extends React.Component {
                     <div>
                         <h1 
                             className="
-                                lg:text-6xl 
-                                md:text-3xl 
+                                text-3xl
+                                lg:text-6xl
                                 font-archivo
                                 h-64
                                 bg-spikeAquamarineBlue
@@ -254,9 +332,10 @@ export default class Configuration extends React.Component {
                         self-center">
                     <h1 
                         className="
+                            text-2xl
                             text-center 
-                            font-cairo">
-                        Vyhľadávanie
+                            font-archivo">
+                        VYHĽADÁVANIE
                     </h1>
                     <div 
                         className="
@@ -285,8 +364,23 @@ export default class Configuration extends React.Component {
                         overflow-y-scroll 
                         h-big-2">
                     {this.showProducts()}
+                    {this.showFinalConfiguration()}
                 </div>
-                {this.nextAndBackButtons()}
+                <div className="self-center font-mulish font-bold">
+                    <h1>CELKOVO: {this.state.totalPrice}€</h1>
+                </div>
+                <div 
+                    id="naspat-dalej"
+                    className="
+                        flex 
+                        flex-row 
+                        justify-center 
+                        font-mulish 
+                        my-10">
+                    {this.backButton()}
+                    {this.nextButton()}
+                    {this.resultButton()}
+                </div>
             </div>
         )
     }
