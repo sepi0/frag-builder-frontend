@@ -12,8 +12,7 @@ export default function Navbar() {
                 items-center 
                 justify-between 
                 p-4 
-                mb-10 
-                w-big">
+                mb-10">
             <div>
                 <Link to="/">
                     <h1>.FRAG COMPUTERS</h1>

@@ -1,8 +1,10 @@
 import React from 'react'
 import axios from 'axios'
 import Navbar from '../Components/Navbar'
-import { faArrowLeft, faArrowRight, faPollH, faSearch, faTrash } from '@fortawesome/free-solid-svg-icons'
+import {faArrowLeft, faArrowRight, faPollH, faSearch, faShoppingCart, faTrash} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Button from '../Components/Button'
+import { text } from '@fortawesome/fontawesome-svg-core'
 
 export default class Configuration extends React.Component {
 
@@ -30,21 +32,22 @@ export default class Configuration extends React.Component {
             browsing: this.productTypes[0],
             configuratorStep: 0,
             configuratorProgress: {
-                0: "Základnú Dosku",
-                1: "Procesor",
-                2: "Grafickú kartu",
+                0: "Základné dosky",
+                1: "Procesory",
+                2: "Grafické karty",
                 3: "RAM-ky",
-                4: "Zdroj",
-                5: "SSD-čko",
-                6: "HDD-čko",
-                7: "Skrinku",
-                8: "Chladenie",
+                4: "Zdroje",
+                5: "SSD-čka",
+                6: "HDD-čka",
+                7: "Skrinky",
+                8: "Chladenia",
                 9: "Výsledná zostava"
             },
             isOnFirstStep: true,
             isOnLastStep: false,
         }
     }
+    
 
     handleProgress = (operation) => {
         let step = this.state.configuratorStep
@@ -131,7 +134,7 @@ export default class Configuration extends React.Component {
                         flex
                         flex-col
                         self-center
-                        w-big
+                        w-720p
                         container
                         md:mx-auto
                         lg:mx-auto
@@ -144,10 +147,12 @@ export default class Configuration extends React.Component {
                                 justify-between
                                 p-3
                                 m-1
-                                w-1/3
+                                w-full
+                                xl:w-2/4
                                 self-center
                                 border
                                 shadow
+                                bg-white
                                 font-mulish
                                 font-bold">
                             <p className="self-center mx-2">{item.model.toUpperCase()}</p>
@@ -188,6 +193,7 @@ export default class Configuration extends React.Component {
                         lg:grid-cols-4 
                         xl:grid-cols-6 
                         container
+                        sm:mx-auto
                         md:mx-auto
                         lg:mx-auto
                         xl:mx-auto
@@ -197,8 +203,9 @@ export default class Configuration extends React.Component {
                             key={key}
                             className="
                                 font-mulish
-                                grid 
-                                grid-col-1 
+                                flex
+                                flex-col
+                                justify-between
                                 text-center 
                                 p-10 
                                 bg-white
@@ -210,7 +217,8 @@ export default class Configuration extends React.Component {
                                 onClick={() => this.handleCart("add", item)}
                                 className="
                                     transition duration-300 ease-in-out
-                                    p-2 
+                                    py-2
+                                    px-4
                                     border 
                                     border-aquamarine-300
                                     rounded-full
@@ -218,6 +226,7 @@ export default class Configuration extends React.Component {
                                     hover:text-white
                                     self-center
                                     cursor-pointer">
+                                <FontAwesomeIcon className="mx-1" icon={faShoppingCart}/>
                                 {item.price} €
                             </div>
                         </div>
@@ -230,23 +239,12 @@ export default class Configuration extends React.Component {
     backButton = () => {
         if (this.state.configuratorStep > 0) {
             return (
-                <div 
-                    onClick={() => this.handleProgress("back")}
-                    className="
-                        flex
-                        flex-row
-                        transition duration-300 ease-in-out 
-                        mx-5 
-                        p-3 
-                        border-2 border-aquamarine-500 
-                        text-black 
-                        hover:bg-aquamarine-500 
-                        hover:text-white 
-                        cursor-pointer  
-                        rounded-full">
-                    <FontAwesomeIcon className="mx-2 self-center" icon={faArrowLeft}/>
-                    BACK
-                </div>
+                <Button 
+                    color="aquamarine"
+                    onClick={() => this.handleProgress("back")}>
+                    <FontAwesomeIcon className="mx-2 self-center text-white" icon={faArrowLeft}/>
+                    <p className="text-white">BACK</p>
+                </Button>
             )
         }
     }
@@ -254,21 +252,12 @@ export default class Configuration extends React.Component {
     nextButton = () => {
         if (this.state.configuratorStep < 8) {
             return (
-                <div 
-                    onClick={() => this.handleProgress("next")}
-                    className="
-                        transition duration-300 ease-in-out 
-                        mx-5 
-                        p-3 
-                        border-2 border-indigo-600 
-                        text-black 
-                        hover:bg-indigo-600 
-                        hover:text-white 
-                        cursor-pointer 
-                        rounded-full">
-                    NEXT
-                    <FontAwesomeIcon className="mx-2 self-center" icon={faArrowRight}/>
-                </div>
+                <Button 
+                    color="indigo"
+                    onClick={() => this.handleProgress("next")}>
+                    <p className="text-white">NEXT</p>
+                    <FontAwesomeIcon className="mx-2 self-center text-white" icon={faArrowRight}/>
+                </Button>
             )
         }
     }
@@ -276,32 +265,22 @@ export default class Configuration extends React.Component {
     resultButton = () => {
         if (this.state.configuratorStep === 8) {
             return (
-                <div 
-                    onClick={() => this.handleProgress("result")}
-                    className="
-                        transition duration-300 ease-in-out 
-                        mx-5 
-                        p-3 
-                        border-2 border-indigo-600 
-                        text-black 
-                        hover:bg-indigo-600 
-                        hover:text-white 
-                        cursor-pointer 
-                        rounded-full">
-                    VYSLEDNA ZOSTAVA
-                    <FontAwesomeIcon className="mx-2 self-center" icon={faPollH}/>
-                </div>
+                <Button 
+                    color="indigo"
+                    onClick={() => this.handleProgress("result")}>
+                    <p className="text-white">VYSLEDNA ZOSTAVA</p>
+                    <FontAwesomeIcon className="mx-2 self-center text-white" icon={faPollH}/>
+                </Button>
             )
         }
     }
 
     render() {
         return (
-            <div 
+            <div
                 className="
                     flex 
-                    flex-col
-                    h-big-2">
+                    flex-col">
                 <Navbar/>
                 <div 
                     id="nadpis" 
@@ -313,11 +292,12 @@ export default class Configuration extends React.Component {
                     <div>
                         <h1 
                             className="
-                                text-3xl
-                                lg:text-6xl
+                                text-5xl
+                                sm:text-6xl
+                                text-carbon-500
                                 font-archivo
                                 h-64
-                                bg-spikeAquamarineBlue
+                                bg-aquaspikes
                                 bg-no-repeat
                                 bg-contain">
                             ./KONFIGURÁTOR
@@ -334,6 +314,7 @@ export default class Configuration extends React.Component {
                         className="
                             text-2xl
                             text-center 
+                            text-carbon-500
                             font-archivo">
                         VYHĽADÁVANIE
                     </h1>
@@ -346,40 +327,53 @@ export default class Configuration extends React.Component {
                         <input 
                             className="shadow m-3 p-1"
                             onChange={this.handleSearch}
-                            placeholder="hľadať">    
+                            placeholder="začni hľadať">    
                         </input>
                     </div>
                     <h1 
                         className="
+                            text-center
                             text-xl
                             md:text-2xl
                             lg:text-4xl
                             py-5
                             font-mulish">
-                        Vyber si {this.state.configuratorProgress[this.state.configuratorStep]}
+                        {this.state.configuratorProgress[this.state.configuratorStep]}
                     </h1>
+                    <p className="font-bold font-cairo text-center">Ak chceš, môžeš si zvoliť viacero komponentov a na konci konfigurácie si ich môžeš povyhadzovať z košíka..</p>
                 </div>
                 <div 
                     className="
+                        bg-pcComponentsBackground
+                        bg-cover
+                        bg-center
+                        bg-no-repeat
                         overflow-y-scroll 
-                        h-big-2">
+                        h-720p">
                     {this.showProducts()}
                     {this.showFinalConfiguration()}
                 </div>
-                <div className="self-center font-mulish font-bold">
-                    <h1>CELKOVO: {this.state.totalPrice}€</h1>
-                </div>
                 <div 
-                    id="naspat-dalej"
                     className="
-                        flex 
-                        flex-row 
-                        justify-center 
-                        font-mulish 
-                        my-10">
-                    {this.backButton()}
-                    {this.nextButton()}
-                    {this.resultButton()}
+                        bg-carbon-500 
+                        w-full
+                        my-10
+                        py-10">
+                    <div className="text-center text-white font-mulish font-bold">
+                        <h1>CELKOVO: {this.state.totalPrice}€</h1>
+                    </div>
+                    <div 
+                        id="naspat-dalej"
+                        className="
+                            flex 
+                            flex-row 
+                            justify-center 
+                            font-mulish 
+                            my-10">
+                        {this.backButton()}
+                        {this.nextButton()}
+                        {this.resultButton()}
+                    </div>
                 </div>
             </div>
         )

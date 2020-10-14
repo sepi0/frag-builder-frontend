@@ -7,8 +7,11 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: theme => ({
-        'spikeAquamarineBlue': "url('https://i.ibb.co/ngCzdxv/obrazok.png')",
-        'spikeRedLime': "url('https://i.ibb.co/bRHZxgW/Group-2.png')"
+        'aquaspikes': "url('./media/aquaspikes.svg')",
+        'bublinky-purple-blue': "url('./media/bublinky-purple-blue.svg')",
+        'spikeRedLime': "url('https://i.ibb.co/bRHZxgW/Group-2.png')",
+        'pcCaseBackground': "url('https://i.ibb.co/f0kPJFS/OBR2.png')",
+        'pcComponentsBackground': "url('https://i.ibb.co/fnhDvHG/OBR1.png')"
       }),
       colors: {
         aquamarine: {
@@ -20,6 +23,9 @@ module.exports = {
           '100': '#AEFFF6',
           '300': '#74FFF8',
           '500': '#00FFF8',
+        },
+        carbon: {
+          '500': '#343434'
         }
       }
     },
@@ -31,10 +37,17 @@ module.exports = {
       'mulish': ['Mulish', 'sans-serif']
     },
     height: {
-      'big': '600px',
-      'big-2': '1200px',
-      'big-3': '1600px'
+      '360p': '360px',
+      '720p': '720px',
+      '1080p': '1080px',
+      '1440p': '1440px'
     },
+    width: {
+      '360p': '640px',
+      '720p': '1280px',
+      '1080p': '1920px',
+      '1440p': '2560px'
+    }
   },
   variants: {},
   plugins: [],
