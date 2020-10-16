@@ -1,9 +1,16 @@
 module.exports = {
   future: {
-    // removeDeprecatedGapUtilities: true,
-    // purgeLayersByDefault: true,
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
   },
-  purge: [],
+  purge: {
+    content: [
+      'src/**/*.js',
+      'src/**/*.jsx',
+      'public/**/*.html',
+    ],
+    css: ['./src/tailwind.css'],
+  },
   theme: {
     extend: {
       backgroundImage: theme => ({
