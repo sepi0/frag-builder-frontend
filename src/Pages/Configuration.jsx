@@ -78,8 +78,13 @@ export default class Configuration extends React.Component {
     }
 
     fetchData = async (productType) => {
-        const response = await axios.get(`https://frag-builder.herokuapp.com/api/components/${productType}/${this.state.search}`)
+        const response = await axios.get(`https://frag-builder.herokuapp.com/api/components/${productType}/${this.state.search}`,
+            {
+                headers: { 'Access-Control-Allow-Origin': '*'
+            }
+        })
         const data = []
+        console.log(response.data.headers)
         response.data.map(item => data.push(item))
         this.setState({ fetchedData: data })
     }
