@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route, Switch, BrowserRouter as Router, HashRouter} from 'react-router-dom'
+import {Route, Switch, HashRouter} from 'react-router-dom'
 
 import Configuration from './Pages/Configuration'
 import Home from './Pages/Home'

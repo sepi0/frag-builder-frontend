@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start:css": "postcss src/tailwind.css -o src/index.css -w",
-    "build:css": "postcss src/tailwind.css -o src/index.css --env production",
+    "build:css": "postcss src/tailwind.css -o src/index.css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

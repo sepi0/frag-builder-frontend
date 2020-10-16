@@ -9,7 +9,6 @@ module.exports = {
       'src/**/*.jsx',
       'public/**/*.html',
     ],
-    css: ['./src/tailwind.css'],
   },
   theme: {
     extend: {
