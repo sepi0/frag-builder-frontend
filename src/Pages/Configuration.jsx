@@ -1,10 +1,19 @@
 import React from 'react'
 import axios from 'axios'
 import Navbar from '../Components/Navbar'
-import {faArrowLeft, faArrowRight, faPollH, faSearch, faShoppingCart, faTrash} from '@fortawesome/free-solid-svg-icons'
+import {
+    faArrowLeft,
+    faArrowRight,
+    faPollH,
+    faSearch,
+    faShoppingCart,
+    faPaperPlane,
+    faTimes
+} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Button from '../Components/Button'
-import { text } from '@fortawesome/fontawesome-svg-core'
+import Button from "../Components/Button";
+import Input from "../Components/Input";
+import OrderForm from "../Components/OrderForm";
 
 export default class Configuration extends React.Component {
 
@@ -28,6 +37,7 @@ export default class Configuration extends React.Component {
             search: [],
             phone: "",
             email: "",
+            name: "",
             totalPrice: 0,
             browsing: this.productTypes[0],
             configuratorStep: 0,
@@ -82,6 +92,10 @@ export default class Configuration extends React.Component {
         this.setState({ email: event.target.value })
     }
 
+    handleName = event => {
+        this.setState({ name: event.target.value })
+    }
+
     handlePhone = event => {
         this.setState({ phone: event.target.value })
     }
@@ -111,6 +125,7 @@ export default class Configuration extends React.Component {
         const json = JSON.stringify({
             orderId: orderId,
             components: this.state.inCart.map(item => item.id).toString(),
+            name: this.state.name,
             email: this.state.email,
             phone: this.state.phone
         })
@@ -126,20 +141,27 @@ export default class Configuration extends React.Component {
         )
     }
 
-    showFinalConfiguration = () => {
+    orderForm = () => {
+        if (this.state.configuratorStep === 9) {
+            return (
+                <OrderForm>
+                    {this.orderButton()}
+                </OrderForm>
+            )
+        }
+    }
+
+    finalConfiguration = () => {
         if (this.state.configuratorStep > 8) {
             return (
-                <div 
+                <div
                     className="
                         flex
                         flex-col
                         self-center
-                        w-720p
                         container
-                        md:mx-auto
-                        lg:mx-auto
-                        xl:mx-auto">
-                    {this.state.inCart.map(item => 
+                        mx-auto">
+                    {this.state.inCart.map(item =>
                         <div
                             className="
                                 flex
@@ -148,7 +170,7 @@ export default class Configuration extends React.Component {
                                 p-3
                                 m-1
                                 w-full
-                                xl:w-2/4
+                                md:w-360p
                                 self-center
                                 border
                                 shadow
@@ -156,22 +178,15 @@ export default class Configuration extends React.Component {
                                 font-mulish
                                 font-bold">
                             <p className="self-center mx-2">{item.model.toUpperCase()}</p>
-                            <div 
+                            <FontAwesomeIcon
                                 onClick={() => this.handleCart("remove", item)}
                                 className="
+                                    text-red-500
                                     self-center
-                                    text-center
-                                    bg-red-500
-                                    w-12
-                                    h-12
-                                    py-1
-                                    px-2
                                     m-1
                                     cursor-pointer
-                                    text-white
-                                    hover:text-black">
-                                <FontAwesomeIcon icon={faTrash}/>
-                            </div>
+                                    text-sm"
+                                icon={faTimes}/>
                         </div>
                     )}
                 </div>
@@ -179,7 +194,7 @@ export default class Configuration extends React.Component {
         }
     }
 
-    showProducts = () => {
+    products = () => {
         if (this.state.configuratorStep < 9) {
             return (
                 <div 
@@ -239,11 +254,11 @@ export default class Configuration extends React.Component {
     backButton = () => {
         if (this.state.configuratorStep > 0) {
             return (
-                <Button 
-                    color="aquamarine"
+                <Button
+                    color={"aquamarine-500"}
                     onClick={() => this.handleProgress("back")}>
-                    <FontAwesomeIcon className="mx-2 self-center text-white" icon={faArrowLeft}/>
-                    <p className="text-white">BACK</p>
+                    <FontAwesomeIcon className="mx-2 self-center" icon={faArrowLeft}/>
+                    <p>BACK</p>
                 </Button>
             )
         }
@@ -252,24 +267,37 @@ export default class Configuration extends React.Component {
     nextButton = () => {
         if (this.state.configuratorStep < 8) {
             return (
-                <Button 
-                    color="indigo"
+                <Button
+                    color={"indigo-500"}
                     onClick={() => this.handleProgress("next")}>
-                    <p className="text-white">NEXT</p>
-                    <FontAwesomeIcon className="mx-2 self-center text-white" icon={faArrowRight}/>
+                    <p>NEXT</p>
+                    <FontAwesomeIcon className="mx-2 self-center" icon={faArrowRight}/>
                 </Button>
             )
         }
     }
 
     resultButton = () => {
-        if (this.state.configuratorStep === 8) {
+        if (this.state.configuratorStep === 8 && this.state.inCart.length !== 0) {
             return (
-                <Button 
-                    color="indigo"
+                <Button
+                    color={"indigo-500"}
                     onClick={() => this.handleProgress("result")}>
-                    <p className="text-white">VYSLEDNA ZOSTAVA</p>
-                    <FontAwesomeIcon className="mx-2 self-center text-white" icon={faPollH}/>
+                    <p>VYSLEDNA ZOSTAVA</p>
+                    <FontAwesomeIcon className="mx-2 self-center" icon={faPollH}/>
+                </Button>
+            )
+        }
+    }
+
+    orderButton = () => {
+        if (this.state.configuratorStep === 9) {
+            return (
+                <Button
+                    color={"bubblegumRed-500"}
+                    onClick={this.sendOrder}>
+                    <p>OBJEDNAŤ</p>
+                    <FontAwesomeIcon className="mx-2 self-center" icon={faPaperPlane}/>
                 </Button>
             )
         }
@@ -324,11 +352,10 @@ export default class Configuration extends React.Component {
                             flex-row 
                             justify-center">
                         <FontAwesomeIcon className="self-center" icon={faSearch}></FontAwesomeIcon>
-                        <input 
-                            className="shadow m-3 p-1"
+                        <Input
                             onChange={this.handleSearch}
                             placeholder="začni hľadať">    
-                        </input>
+                        </Input>
                     </div>
                     <h1 
                         className="
@@ -340,26 +367,38 @@ export default class Configuration extends React.Component {
                             font-mulish">
                         {this.state.configuratorProgress[this.state.configuratorStep]}
                     </h1>
-                    <p className="font-bold font-cairo text-center">Ak chceš, môžeš si zvoliť viacero komponentov a na konci konfigurácie si ich môžeš povyhadzovať z košíka..</p>
+                    <p
+                        className="
+                            font-bold
+                            font-mulish
+                            text-center">
+                        Ak chceš, môžeš si zvoliť viacero komponentov a na konci konfigurácie si ich povyhadzuješ z košíka..
+                    </p>
                 </div>
                 <div 
                     className="
-                        bg-pcComponentsBackground
-                        bg-cover
-                        bg-center
-                        bg-no-repeat
                         overflow-y-scroll 
                         h-720p">
-                    {this.showProducts()}
-                    {this.showFinalConfiguration()}
+                    {this.products()}
+                    {this.finalConfiguration()}
+                    <div>
+                        {this.orderForm()}
+                    </div>
                 </div>
-                <div 
+                <div
                     className="
-                        bg-carbon-500 
+                        border-2
+                        border-top
+                        bg-white
                         w-full
-                        my-10
+                        my-1
                         py-10">
-                    <div className="text-center text-white font-mulish font-bold">
+                    <div
+                        className="
+                            text-center
+                            text-carbon-500
+                            font-mulish
+                            font-bold">
                         <h1>CELKOVO: {this.state.totalPrice}€</h1>
                     </div>
                     <div 

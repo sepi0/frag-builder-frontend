@@ -1,88 +1,32 @@
-import React from 'react';
+import React from "react";
 
-export default function Button(props) {
-    if (props.color === "aquamarine") {
-        return (
-            <div
-                onClick={props.onClick}
-                className="
-                    flex
-                    flex-row
-                    transition duration-300 ease-in-out 
-                    mx-5 
-                    p-3 
-                    border-2 
-                    border-aquamarine-500 
-                    text-black 
-                    hover:bg-aquamarine-500 
-                    hover:text-white 
-                    cursor-pointer 
-                    rounded-full">
-                {props.children}
-            </div>
-        )
-    }
+const Button = (props) => {
 
-    if (props.color === "indigo") {
-        return (
-            <div
-                onClick={props.onClick}
-                className="
-                    flex
-                    flex-row
-                    transition duration-300 ease-in-out 
-                    mx-5 
-                    p-3 
-                    border-2 
-                    border-indigo-600 
-                    text-black 
-                    hover:bg-indigo-600 
-                    hover:text-white 
-                    cursor-pointer 
-                    rounded-full">
-                {props.children}
-            </div>
-        )
-    }
-
-    if (props.color === "orange") {
-        return (
-            <div
-                onClick={props.onClick}
-                className="
-                    transition duration-300 ease-in-out 
-                    mx-5 
-                    p-3 
-                    border-2 
-                    border-orange-600 
-                    text-black 
-                    hover:bg-orange-600 
-                    hover:text-white 
-                    cursor-pointer 
-                    rounded-full">
-                {props.children}
-            </div>
-        )
-    }
-
-    if (props.color === "red") {
-        return (
-            <div
-                onClick={props.onClick}
-                className="
-                    transition duration-300 ease-in-out 
-                    mx-5 
-                    p-3 
-                    border-2 
-                    border-red-500 
-                    text-black 
-                    hover:bg-red-500 
-                    hover:text-white 
-                    cursor-pointer 
-                    rounded-full">
-                {props.children}
-            </div>
-        )        
-    }
-    
+	return (
+		<button
+			className={`
+				flex
+				flex-row
+				transition duration-300 ease-in-out
+				my-10
+				mx-5
+				py-2
+				px-4
+				border-2
+				border-${props.color}
+				hover:bg-${props.color}
+				text-black
+				hover:text-white
+				font-bold
+				rounded-full
+				focus:outline-none
+				cursor-pointer
+				`}
+			onClick={props.onClick}
+		>
+			{props.children}
+		</button>
+	)
 }
+
+export default Button

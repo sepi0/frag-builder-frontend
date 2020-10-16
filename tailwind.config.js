@@ -8,10 +8,13 @@ module.exports = {
     extend: {
       backgroundImage: theme => ({
         'aquaspikes': "url('./media/aquaspikes.svg')",
+        'purplespikes': "url('./media/purplespikes.svg')",
         'bublinky-purple-blue': "url('./media/bublinky-purple-blue.svg')",
         'spikeRedLime': "url('https://i.ibb.co/bRHZxgW/Group-2.png')",
         'pcCaseBackground': "url('https://i.ibb.co/f0kPJFS/OBR2.png')",
-        'pcComponentsBackground': "url('https://i.ibb.co/fnhDvHG/OBR1.png')"
+        'pcComponentsBackground': "url('https://i.ibb.co/fnhDvHG/OBR1.png')",
+        'obrazok-zostavy': "url('./media/zostavy.svg')",
+        'obrazok-konfigurator': "url('./media/konfigurator.svg')"
       }),
       colors: {
         aquamarine: {
@@ -26,6 +29,15 @@ module.exports = {
         },
         carbon: {
           '500': '#343434'
+        },
+        bubblegumRed: {
+          '500': '#FF1948'
+        },
+        babyBlue: {
+          '500': '#0DBCFF'
+        },
+        fragBlue: {
+          '500': '#0F3BD8'
         }
       }
     },
