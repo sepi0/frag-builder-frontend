@@ -28,7 +28,7 @@ export default function Home() {
                         ./VITAJ NA FRAG COMPUTERS
                     </h1>
                     <h3 className="font-cairo text-4xl mt-10 mb-5">
-                        postav si pocitac snov alebo do rana skap ty had
+                        Za málo peňazí, veľa gamingu!
                     </h3>
                 </div>
                 <div
@@ -65,7 +65,7 @@ export default function Home() {
                         </p>
                         <Link to={"/konfigurator"}>
                             <Button color={"bubblegumRed-500"}>
-                                Konfigurator
+                                Konfigurátor
                             </Button>
                         </Link>
                     </div>

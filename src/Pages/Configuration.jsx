@@ -346,6 +346,7 @@ export default class Configuration extends React.Component {
                             font-archivo">
                         VYHĽADÁVANIE
                     </h1>
+                    <p className="text-center">Výsledky sa zobrazia do 10 sekúnd v prípade že backend nebeží.</p>
                     <div 
                         className="
                             flex 
