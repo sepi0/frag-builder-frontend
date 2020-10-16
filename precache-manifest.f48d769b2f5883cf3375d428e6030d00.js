@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9670c0e6d91735b3e421efb3f38899c8",
+    "revision": "2069336e5b7a98c68788efff124609bc",
     "url": "/frag-builder-frontend/index.html"
   },
   {
-    "revision": "1b3dd3cf09f437fdf539",
-    "url": "/frag-builder-frontend/static/css/main.d71ba854.chunk.css"
+    "revision": "0f84e448515e43ab4779",
+    "url": "/frag-builder-frontend/static/css/main.5657f431.chunk.css"
   },
   {
     "revision": "2ce23a06a51da9806445",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/frag-builder-frontend/static/js/2.633b5224.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1b3dd3cf09f437fdf539",
-    "url": "/frag-builder-frontend/static/js/main.3f563737.chunk.js"
+    "revision": "0f84e448515e43ab4779",
+    "url": "/frag-builder-frontend/static/js/main.86b16e2d.chunk.js"
   },
   {
     "revision": "83293d06e36c0c38b1ee",
@@ -26,6 +26,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8ac3f48a8e75419099ede3dee16b037a",
     "url": "/frag-builder-frontend/static/media/aquaspikes.8ac3f48a.svg"
+  },
+  {
+    "revision": "5f6d0a4de6b22b65132df526d8e83263",
+    "url": "/frag-builder-frontend/static/media/bublinky-purple-blue.5f6d0a4d.svg"
   },
   {
     "revision": "f1a5bb2dfc84c22fd179c2cc7e292853",

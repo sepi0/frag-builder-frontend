@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1688" height="977" viewBox="0 0 1688 977">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#65e0ff"/>
+      <stop offset="1" stop-color="#b367ff"/>
+    </linearGradient>
+  </defs>
+  <g id="bublinky-purple-blue" transform="translate(-116 -52)">
+    <circle id="Ellipse_8" data-name="Ellipse 8" cx="81" cy="81" r="81" transform="matrix(0.588, 0.809, -0.809, 0.588, 1176.92, 315.859)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_1" data-name="Ellipse 1" cx="63" cy="63" r="63" transform="translate(341.129 453.751) rotate(30)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_13" data-name="Ellipse 13" cx="63" cy="63" r="63" transform="matrix(-0.485, 0.875, -0.875, -0.485, 1541.833, 177.253)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_2" data-name="Ellipse 2" cx="28.5" cy="28.5" r="28.5" transform="translate(581 357)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_9" data-name="Ellipse 9" cx="28.5" cy="28.5" r="28.5" transform="translate(1450 429)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_3" data-name="Ellipse 3" cx="50.5" cy="50.5" r="50.5" transform="matrix(0.616, 0.788, -0.788, 0.616, 887.204, 604.615)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_4" data-name="Ellipse 4" cx="21" cy="21" r="21" transform="translate(1027 238)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_10" data-name="Ellipse 10" cx="21" cy="21" r="21" transform="translate(1741 845)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_19" data-name="Ellipse 19" cx="10.5" cy="10.5" r="10.5" transform="translate(1230 854)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_22" data-name="Ellipse 22" cx="10.5" cy="10.5" r="10.5" transform="translate(1310 617)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_24" data-name="Ellipse 24" cx="10.5" cy="10.5" r="10.5" transform="translate(772 101)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_29" data-name="Ellipse 29" cx="10.5" cy="10.5" r="10.5" transform="translate(705 466)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_31" data-name="Ellipse 31" cx="10.5" cy="10.5" r="10.5" transform="translate(1616 328)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_33" data-name="Ellipse 33" cx="10.5" cy="10.5" r="10.5" transform="translate(116 429)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_35" data-name="Ellipse 35" cx="10.5" cy="10.5" r="10.5" transform="translate(127 101)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_26" data-name="Ellipse 26" cx="10.5" cy="10.5" r="10.5" transform="translate(1271 52)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_28" data-name="Ellipse 28" cx="10.5" cy="10.5" r="10.5" transform="translate(1127 178)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_20" data-name="Ellipse 20" cx="10.5" cy="10.5" r="10.5" transform="translate(884 1008)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_21" data-name="Ellipse 21" cx="10.5" cy="10.5" r="10.5" transform="translate(964 771)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_23" data-name="Ellipse 23" cx="10.5" cy="10.5" r="10.5" transform="translate(426 255)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_25" data-name="Ellipse 25" cx="10.5" cy="10.5" r="10.5" transform="translate(925 206)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_30" data-name="Ellipse 30" cx="10.5" cy="10.5" r="10.5" transform="translate(858 571)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_32" data-name="Ellipse 32" cx="10.5" cy="10.5" r="10.5" transform="translate(1769 433)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_34" data-name="Ellipse 34" cx="10.5" cy="10.5" r="10.5" transform="translate(269 534)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_36" data-name="Ellipse 36" cx="10.5" cy="10.5" r="10.5" transform="translate(280 206)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_27" data-name="Ellipse 27" cx="10.5" cy="10.5" r="10.5" transform="translate(781 332)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_12" data-name="Ellipse 12" cx="21" cy="21" r="21" transform="translate(228 771)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_5" data-name="Ellipse 5" cx="75.5" cy="75.5" r="75.5" transform="translate(468.898 848.669) rotate(-31)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_6" data-name="Ellipse 6" cx="21" cy="21" r="21" transform="translate(1762 238)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_11" data-name="Ellipse 11" cx="21" cy="21" r="21" transform="translate(193 172)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_7" data-name="Ellipse 7" cx="38" cy="38" r="38" transform="translate(1366 688)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_45" data-name="Ellipse 45" cx="38" cy="38" r="38" transform="translate(1366 668)" fill="#fff"/>
+    <circle id="Ellipse_14" data-name="Ellipse 14" cx="28" cy="28" r="28" transform="matrix(0.616, 0.788, -0.788, 0.616, 637.448, 806.78)" fill="#fff"/>
+    <circle id="Ellipse_15" data-name="Ellipse 15" cx="28" cy="28" r="28" transform="matrix(0.616, 0.788, -0.788, 0.616, 322.448, 565.78)" fill="#fff"/>
+    <circle id="Ellipse_16" data-name="Ellipse 16" cx="28" cy="28" r="28" transform="matrix(0.616, 0.788, -0.788, 0.616, 637.448, 306.78)" fill="#fff"/>
+    <circle id="Ellipse_17" data-name="Ellipse 17" cx="28" cy="28" r="28" transform="matrix(0.616, 0.788, -0.788, 0.616, 1090.448, 421.78)" fill="#fff"/>
+    <circle id="Ellipse_37" data-name="Ellipse 37" cx="28" cy="28" r="28" transform="matrix(0.616, 0.788, -0.788, 0.616, 1087.448, 378.78)" fill="#fff"/>
+    <circle id="Ellipse_38" data-name="Ellipse 38" cx="28" cy="28" r="28" transform="matrix(0.616, 0.788, -0.788, 0.616, 1096.448, 331.78)" fill="#fff"/>
+    <circle id="Ellipse_39" data-name="Ellipse 39" cx="12.5" cy="12.5" r="12.5" transform="matrix(0.616, 0.788, -0.788, 0.616, 1166.02, 390.865)" fill="#fff"/>
+    <circle id="Ellipse_42" data-name="Ellipse 42" cx="12.5" cy="12.5" r="12.5" transform="matrix(0.616, 0.788, -0.788, 0.616, 1204.02, 390.865)" fill="#fff"/>
+    <circle id="Ellipse_40" data-name="Ellipse 40" cx="9" cy="9" r="9" transform="translate(1167.378 399.836) rotate(60)"/>
+    <circle id="Ellipse_43" data-name="Ellipse 43" cx="9" cy="9" r="9" transform="translate(1205.378 399.836) rotate(60)"/>
+    <ellipse id="Ellipse_41" data-name="Ellipse 41" cx="4.5" cy="4" rx="4.5" ry="4" transform="translate(1164.218 410.166) rotate(60)" fill="#fff"/>
+    <ellipse id="Ellipse_44" data-name="Ellipse 44" cx="4.5" cy="4" rx="4.5" ry="4" transform="translate(1202.218 410.166) rotate(60)" fill="#fff"/>
+    <circle id="Ellipse_18" data-name="Ellipse 18" cx="61" cy="61" r="61" transform="matrix(0.616, 0.788, -0.788, 0.616, 1473.457, 136.146)" fill="#fff"/>
+    <path id="Path_3" data-name="Path 3" d="M3108.566,467.357s30.946,21.985,56.031,0" transform="translate(-1968.076 763.835) rotate(-14)" fill="none" stroke="#fff" stroke-width="5"/>
+    <path id="Path_4" data-name="Path 4" d="M3140.743,446.617l5.965,6.173-7.352,1.942" transform="translate(-1956 -16)" fill="none" stroke="#fff" stroke-width="5"/>
+  </g>
+</svg>
