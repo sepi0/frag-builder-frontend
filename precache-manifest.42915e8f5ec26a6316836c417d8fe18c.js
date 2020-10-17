@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2069336e5b7a98c68788efff124609bc",
+    "revision": "cbd41417c0d035ffc6cec45313214387",
     "url": "/frag-builder-frontend/index.html"
   },
   {
-    "revision": "0f84e448515e43ab4779",
+    "revision": "a99e1d4f3b2abc65cf1e",
     "url": "/frag-builder-frontend/static/css/main.5657f431.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/frag-builder-frontend/static/js/2.633b5224.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0f84e448515e43ab4779",
-    "url": "/frag-builder-frontend/static/js/main.86b16e2d.chunk.js"
+    "revision": "a99e1d4f3b2abc65cf1e",
+    "url": "/frag-builder-frontend/static/js/main.1ad49e77.chunk.js"
   },
   {
     "revision": "83293d06e36c0c38b1ee",
