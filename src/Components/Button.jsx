@@ -8,17 +8,15 @@ const Button = (props) => {
 				flex
 				flex-row
 				transition duration-300 ease-in-out
-				my-10
-				mx-5
 				py-2
 				px-4
 				border-2
-				border-${props.color}
-				hover:bg-${props.color}
+				bg-white
+				${props.className}
 				text-black
 				hover:text-white
 				font-bold
-				rounded-full
+				rounded
 				focus:outline-none
 				cursor-pointer
 				`}

@@ -16,11 +16,11 @@ module.exports = {
         'aquaspikes': "url('./media/aquaspikes.svg')",
         'purplespikes': "url('./media/purplespikes.svg')",
         'bublinky-purple-blue': "url('./media/bublinky-purple-blue.svg')",
-        'spikeRedLime': "url('https://i.ibb.co/bRHZxgW/Group-2.png')",
-        'pcCaseBackground': "url('https://i.ibb.co/f0kPJFS/OBR2.png')",
-        'pcComponentsBackground': "url('https://i.ibb.co/fnhDvHG/OBR1.png')",
         'obrazok-zostavy': "url('./media/zostavy.svg')",
-        'obrazok-konfigurator': "url('./media/konfigurator.svg')"
+        'obrazok-konfigurator': "url('./media/konfigurator.svg')",
+        'bubblewave': "url('./media/bublewave.svg')",
+        'tetris': "url('./media/tetris.svg')",
+        'tetris2': "url('./media/tetris2.svg')"
       }),
       colors: {
         aquamarine: {
@@ -34,15 +34,16 @@ module.exports = {
           '500': '#00FFF8',
         },
         carbon: {
-          '500': '#343434'
+          '500': '#343434',
+          '900': '#101010'
         },
-        bubblegumRed: {
+        bubblegumred: {
           '500': '#FF1948'
         },
-        babyBlue: {
+        babyblue: {
           '500': '#0DBCFF'
         },
-        fragBlue: {
+        fragblue: {
           '500': '#0F3BD8'
         }
       }

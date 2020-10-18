@@ -3,18 +3,7 @@ import Input from "./Input";
 
 const OrderForm = (props) => {
 	return (
-		<div
-			className="
-				self-center
-				shadow
-				bg-white
-				text-carbon-500
-				font-mulish
-				my-3
-				mx-auto
-				w-full
-				md:w-360p
-				p-10">
+		<div className=" self-center shadow bg-white text-carbon-500 font-mulish my-3 mx-auto w-full md:w-360p p-10">
 			<div className="flex flex-col p-3">
 				<div className="self-center border-carbon-500">
 					<p>Meno</p>

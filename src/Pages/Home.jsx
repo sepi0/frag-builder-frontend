@@ -7,40 +7,18 @@ export default function Home() {
     return (
         <div>
             <Navbar/>
-            <div
-                className="
-                    flex
-                    flex-col
-                    justify-center
-                    sm:container
-                    mx-auto">
-                <div id="nadpis"
-                     className="
-                        h-360p
-                        bg-purplespikes
-                        bg-no-repeat
-                        bg-contain
-                        bg-gradient-to-r from-purple-400 via-pink-500 to-red-500
-                        text-left
-                        md:text-right
-                        ">
-                    <h1 className="font-archivo font-bold text-6xl mt-20">
+            <div id="nadpis" className=" h-360p bg-carbon-900 text-white text-left md:text-right">
+                <div className={"bg-tetris mx-auto h-360p"}>
+                    <h1 className="font-archivo text-center font-bold text-6xl">
                         ./VITAJ NA FRAG COMPUTERS
                     </h1>
-                    <h3 className="font-cairo text-4xl mt-10 mb-5">
+                    <h3 className="font-cairo text-center text-2xl md:text-4xl mt-4 mb-5">
                         Za málo peňazí, veľa gamingu!
                     </h3>
                 </div>
-                <div
-                    id="grid"
-                    className="
-                        grid
-                        grid-cols-1
-                        md:grid-cols-2
-                        lg:gap-4
-                        gap-8
-                        mt-20
-                        py-20">
+            </div>
+            <div className=" flex flex-col justify-center sm:container mx-auto">
+                <div id="grid" className=" grid grid-cols-1 md:grid-cols-2 lg:gap-4 gap-8 mt-20 py-20">
                     <div className="bg-obrazok-zostavy bg-contain bg-no-repeat h-360p">
                     </div>
                     <div  className="p-10 md:h-360p">
@@ -51,9 +29,11 @@ export default function Home() {
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aut consequuntur delectus deserunt eius ex expedita illo impedit ipsa ipsum laborum magnam molestias obcaecati perferendis perspiciatis quam quasi, temporibus vitae.
                         </p>
                         <Link to={"/zostavy"}>
-                            <Button color={"bubblegumRed-500"}>
-                                Zostavy
-                            </Button>
+                            <div className={"my-10"}>
+                                <Button className={"border-carbon-900 hover:bg-carbon-900"}>
+                                    ZOSTAVY
+                                </Button>
+                            </div>
                         </Link>
                     </div>
                     <div className="p-10 md:h-360p">
@@ -64,9 +44,11 @@ export default function Home() {
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci animi at cum dolor earum exercitationem fugiat harum hic ipsa iure laborum magnam, possimus quis repudiandae sint tempora tenetur voluptates?
                         </p>
                         <Link to={"/konfigurator"}>
-                            <Button color={"bubblegumRed-500"}>
-                                Konfigurátor
-                            </Button>
+                            <div className={"my-10"}>
+                                <Button className={"border-carbon-900 hover:bg-carbon-900"}>
+                                    KONFIGURÁTOR
+                                </Button>
+                            </div>
                         </Link>
                     </div>
                     <div className="bg-obrazok-konfigurator bg-contain bg-no-repeat h-360p">

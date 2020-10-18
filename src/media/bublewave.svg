@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="360.983" viewBox="0 0 1280 360.983">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#65e0ff"/>
+      <stop offset="1" stop-color="#b367ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffad65"/>
+      <stop offset="1" stop-color="#ff6767"/>
+    </linearGradient>
+  </defs>
+  <g id="bublewave" transform="translate(-325 -540)">
+    <rect id="Rectangle_13" data-name="Rectangle 13" width="1280" height="360" transform="translate(325 540)" fill="#101010"/>
+    <path id="Path_5" data-name="Path 5" d="M6352.679,869.277c47.559-3.523-150.6-62.532,59.009-127.705s147.962,124.182,317.942-29.064,256.292-174.384,225.466-67.816,189.356,251.888,352.291,107.449,60.771,113.614,155.889,73.981,110.971,74.862,110.971,74.862H6295.432S6305.12,872.8,6352.679,869.277Z" transform="translate(-5970)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_46" data-name="Ellipse 46" cx="40.5" cy="40.5" r="40.5" transform="translate(1101 659)" fill="url(#linear-gradient-2)"/>
+    <circle id="Ellipse_47" data-name="Ellipse 47" cx="11" cy="11" r="11" transform="translate(1221 618)" fill="url(#linear-gradient-2)"/>
+    <circle id="Ellipse_48" data-name="Ellipse 48" cx="17" cy="17" r="17" transform="translate(1531 706)" fill="url(#linear-gradient-2)"/>
+    <circle id="Ellipse_49" data-name="Ellipse 49" cx="20" cy="20" r="20" transform="translate(598 683)" fill="url(#linear-gradient-2)"/>
+    <circle id="Ellipse_50" data-name="Ellipse 50" cx="44.5" cy="44.5" r="44.5" transform="translate(404 614)" fill="url(#linear-gradient-2)"/>
+    <circle id="Ellipse_51" data-name="Ellipse 51" cx="8" cy="8" r="8" transform="translate(757 570)" fill="url(#linear-gradient-2)"/>
+    <circle id="Ellipse_52" data-name="Ellipse 52" cx="9" cy="9" r="9" transform="translate(894 560)" fill="url(#linear-gradient-2)"/>
+  </g>
+</svg>
