@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2abacbb369baccfa0425dac5eb0e69c2",
+    "revision": "db5dd7eb6c0d22a5e346cabb0fcb0bb9",
     "url": "/frag-builder-frontend/index.html"
   },
   {
