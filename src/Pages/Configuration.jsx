@@ -243,7 +243,7 @@ export default class Configuration extends React.Component {
 		return (
 			<div>
 				<Navbar />
-				<div id="nadpis" className="flex  flex-row  justify-center h-360p bg-carbon-900">
+				<div id="nadpis" className="flex  flex-row  justify-center h-360p bg-carbon-900 shadow-xl">
 					<div className={"bg-tetris2 w-720p h-360p items-center"}>
 						<h1 className="text-5xl sm:text-6xl text-center text-white font-archivo h-64">
 							./KONFIGURÁTOR

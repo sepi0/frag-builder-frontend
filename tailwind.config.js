@@ -19,7 +19,7 @@ module.exports = {
         'obrazok-zostavy': "url('./media/zostavy.svg')",
         'obrazok-konfigurator': "url('./media/konfigurator.svg')",
         'bubblewave': "url('./media/bublewave.svg')",
-        'tetris': "url('./media/tetris.svg')",
+        'tetris1': "url('./media/tetris1.svg')",
         'tetris2': "url('./media/tetris2.svg')"
       }),
       colors: {

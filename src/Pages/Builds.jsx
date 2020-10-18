@@ -178,8 +178,8 @@ export default class Builds extends React.Component {
 				<div>
 					<Navbar />
 					<div className="h-1440p flex flex-col content-center">
-						<div className="flex flex-row justify-center items-center h-360p bg-carbon-900">
-							<div className={"bg-tetris w-720p h-360p items-center"}>
+						<div className="flex flex-row justify-center items-center h-360p bg-carbon-900 shadow-xl">
+							<div className={"bg-tetris1 w-720p h-360p items-center"}>
 								<h1
 									className=" text-6xl font-archivo text-center h-64 text-white">
 									./ZOSTAVY
@@ -200,8 +200,8 @@ export default class Builds extends React.Component {
 				<div>
 					<Navbar />
 					<div className="flex flex-col content-center">
-						<div className="flex flex-row justify-center items-center h-360p bg-carbon-900">
-							<div className={"bg-tetris w-720p h-360p items-center"}>
+						<div className="flex flex-row justify-center items-center h-360p bg-carbon-900 shadow-xl">
+							<div className={"bg-tetris1 w-720p h-360p items-center"}>
 								<h1 className=" text-6xl font-archivo h-64 text-white text-center">
 									./KOŠÍK
 								</h1>

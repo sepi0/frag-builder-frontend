@@ -7,14 +7,16 @@ export default function Home() {
     return (
         <div>
             <Navbar/>
-            <div id="nadpis" className=" h-360p bg-carbon-900 text-white text-left md:text-right">
-                <div className={"bg-tetris mx-auto h-360p"}>
+            <div id="nadpis" className=" h-360p bg-carbon-900 text-white text-left md:text-right shadow-xl">
+                <div className={"bg-tetris1 bg-no-repeat bg-center mx-auto h-360p"}>
                     <h1 className="font-archivo text-center font-bold text-6xl">
                         ./VITAJ NA FRAG COMPUTERS
                     </h1>
-                    <h3 className="font-cairo text-center text-2xl md:text-4xl mt-4 mb-5">
-                        Za málo peňazí, veľa gamingu!
-                    </h3>
+                    <div className={"rounded bg-white mx-auto w-360p"}>
+                        <h3 className="font-cairo text-black text-center text-2xl md:text-4xl mt-4 mb-5">
+                            Za málo peňazí, veľa gamingu!
+                        </h3>
+                    </div>
                 </div>
             </div>
             <div className=" flex flex-col justify-center sm:container mx-auto">
