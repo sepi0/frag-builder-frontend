@@ -66,18 +66,22 @@ export default class Builds extends React.Component {
 		this.setState({ totalPrice: total.toFixed(2) })
 	}
 
-
-	handleCart = (operation, product) => {
+	addToCart = (product) => {
 		const cart = this.state.inCart
-		if (operation === "add") {
-			cart.push(product)
-			cart.concat(this.state.inCart)
-			this.setState({ inCart: cart }, () => this.handleTotal())
-		} else {
-			const index = cart.indexOf(product)
-			cart.splice(index, 1)
-			this.setState({ inCart: cart }, () => this.handleTotal())
-		}
+		cart.push(product)
+		cart.concat(this.state.inCart)
+		this.setState({
+			inCart: cart
+		}, this.handleTotal)
+	}
+
+	removeFromCart = (product) => {
+		const cart = this.state.inCart
+		const productIndex = cart.indexOf(product)
+		cart.splice(productIndex, 1)
+		this.setState({
+			inCart: cart
+		}, this.handleTotal)
 	}
 
 	cartButton = () => {
@@ -140,20 +144,20 @@ export default class Builds extends React.Component {
 		let cards = []
 		buildsJson.map(zostavy => {
 			for (let key of Object.entries(zostavy)) {
-				let model = key[1].model
-				let zakladnaDoska = key[1].zakladnaDoska
-				let procesor = key[1].procesor
-				let grafickaKarta = key[1].grafickaKarta
-				let ram = key[1].ram
-				let ssd = key[1].ssd
-				let hdd = key[1].hdd
-				let zdroj = key[1].zdroj
-				let skrinka = key[1].skrinka
-				let chladenie = key[1].chladenie
-				let cena = key[1].cena
+				let model 					= key[1].model
+				let zakladnaDoska 	= key[1].zakladnaDoska
+				let procesor 				= key[1].procesor
+				let grafickaKarta 	= key[1].grafickaKarta
+				let ram 						= key[1].ram
+				let ssd 						= key[1].ssd
+				let hdd 						= key[1].hdd
+				let zdroj 					= key[1].zdroj
+				let skrinka 				= key[1].skrinka
+				let chladenie 			= key[1].chladenie
+				let cena 						= key[1].cena
 				cards.push(
 					<Card
-						onClick={() => this.handleCart("add", { model: model, price: parseInt(cena) })}
+						onClick={() => this.addToCart({ model: model, price: parseInt(cena) })}
 						model={model}
 						zakladnaDoska={zakladnaDoska}
 						procesor={procesor}
@@ -218,7 +222,7 @@ export default class Builds extends React.Component {
 									className=" flex flex-row justify-between p-3 m-1 w-full md:w-360p self-center border shadow bg-white font-mulish font-bold">
 									<p className="self-center mx-2">{item.model.toUpperCase()}</p>
 									<FontAwesomeIcon
-										onClick={() => this.handleCart("remove", item)}
+										onClick={() => this.removeFromCart(item)}
 										className=" text-red-500 self-center m-1 cursor-pointer text-sm"
 										icon={faTimes} />
 								</div>

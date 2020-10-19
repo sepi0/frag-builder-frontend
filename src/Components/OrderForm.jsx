@@ -7,15 +7,15 @@ const OrderForm = (props) => {
 			<div className="flex flex-col p-3">
 				<div className="self-center border-carbon-500">
 					<p>Meno</p>
-					<Input onChange={props.onChangeName} placeholder="Prosím zadaj tvoje meno.."/>
+					<Input onChange={props.onChangeName} placeholder="Prosím zadaj tvoje meno.." type="text"/>
 				</div >
 				<div className="self-center border-carbon-500">
 					<p>Email</p>
-					<Input onChange={props.onChangeEmail} placeholder="Prosím zadaj tvoj email.."/>
+					<Input onChange={props.onChangeEmail} placeholder="Prosím zadaj tvoj email.." type="email"/>
 				</div>
 				<div className="self-center border-carbon-500">
 					<p>Telefon</p>
-					<Input onChange={props.onChangePhone} placeholder="Prosím zadaj tvoje číslo.."/>
+					<Input onChange={props.onChangePhone} placeholder="Prosím zadaj tvoje číslo.." type="number"/>
 				</div>
 				<div className="self-center py-3">
 					{props.children}

@@ -53,26 +53,22 @@ export default class Configuration extends React.Component {
 				8: "Chladenia",
 				9: "Výsledná zostava"
 			},
-			isOnFirstStep: true,
-			isOnLastStep: false,
 		}
 	}
 
-
-	handleProgress = (operation) => {
-		let step = this.state.configuratorStep
-		if (operation === "next" || operation === "result") {
-			this.flushData()
-			step += 1
-			this.setState({ configuratorStep: step })
-		} else if (operation === "back") {
-			this.flushData()
-			step -= 1
-			this.setState({ configuratorStep: step })
-		}
+	forwardProgress = () => {
+		this.setState({
+			configuratorStep: this.state.configuratorStep + 1
+		})
 	}
 
-	flushData = () => {
+	backwardProgress = () => {
+		this.setState({
+			configuratorStep: this.state.configuratorStep - 1
+		})
+	}
+
+	emptyData = () => {
 		const data = []
 		this.setState({ fetchedData: data })
 	}
@@ -107,21 +103,27 @@ export default class Configuration extends React.Component {
 		this.setState({ totalPrice: total.toFixed(2) })
 	}
 
-	handleCart = (operation, product) => {
+	addToCart = (product) => {
 		const cart = this.state.inCart
-		if (operation === "add") {
-			cart.push(product)
-			cart.concat(this.state.inCart)
-			this.setState({ inCart: cart }, () => this.handleTotal())
-		} else {
-			const index = cart.indexOf(product)
-			cart.splice(index, 1)
-			this.setState({ inCart: cart }, () => this.handleTotal())
-		}
+		cart.push(product)
+		cart.concat(this.state.inCart)
+		this.setState({
+			inCart: cart
+		}, this.handleTotal)
+	}
+
+	removeFromCart = (product) => {
+		const cart = this.state.inCart
+		const productIndex = cart.indexOf(product)
+		cart.splice(productIndex, 1)
+		this.setState({
+			inCart: cart
+		}, this.handleTotal)
 	}
 
 	sendOrder = async (event) => {
 		event.preventDefault()
+
 		const orderId = (Math.floor(1000000 + Math.random() * 9000000)).toString()
 		const json = JSON.stringify({
 			orderId: orderId,
@@ -159,7 +161,7 @@ export default class Configuration extends React.Component {
 					{this.state.inCart.map(item =>
 						<div className=" flex flex-row justify-between p-3 m-1 w-full md:w-360p self-center border shadow bg-white font-mulish font-bold">
 							<p className="self-center mx-2">{item.model.toUpperCase()}</p>
-							<FontAwesomeIcon onClick={() => this.handleCart("remove", item)} className=" text-red-500 self-center m-1 cursor-pointer text-sm" icon={faTimes} />
+							<FontAwesomeIcon onClick={() => this.removeFromCart(item)} className=" text-red-500 self-center m-1 cursor-pointer text-sm" icon={faTimes} />
 						</div>
 					)}
 				</div>
@@ -175,7 +177,7 @@ export default class Configuration extends React.Component {
 						<div key={key} className="font-mulish flex flex-col justify-between text-center  p-10  bg-white border-1 shadow full">
 							<h3>{item.model.toUpperCase()}</h3>
 							<div className={"my-3 mx-auto"}>
-								<Button className={"border-babyblue-500 hover:bg-babyblue-500"} onClick={() => this.handleCart("add", item)}>
+								<Button className={"border-babyblue-500 hover:bg-babyblue-500"} onClick={() => this.addToCart(item)}>
 									<FontAwesomeIcon className="mx-1 self-center" icon={faShoppingCart} />
 									{item.price} €
 								</Button>
@@ -192,7 +194,7 @@ export default class Configuration extends React.Component {
 			return (
 				<Button
 					className={"border-aquamarine-500 hover:bg-aquamarine-500"}
-					onClick={() => this.handleProgress("back")}>
+					onClick={this.backwardProgress}>
 					<FontAwesomeIcon className="mx-2 self-center" icon={faArrowLeft} />
 					<p>BACK</p>
 				</Button>
@@ -205,7 +207,7 @@ export default class Configuration extends React.Component {
 			return (
 				<Button
 					className={"border-bubblegumred-500 hover:bg-bubblegumred-500"}
-					onClick={() => this.handleProgress("next")}>
+					onClick={this.forwardProgress}>
 					<p>NEXT</p>
 					<FontAwesomeIcon className="mx-2 self-center" icon={faArrowRight} />
 				</Button>
@@ -218,7 +220,7 @@ export default class Configuration extends React.Component {
 			return (
 				<Button
 					className={"border-bubblegumred-500 hover:bg-bubblegumred-500"}
-					onClick={() => this.handleProgress("result")}>
+					onClick={this.forwardProgress}>
 					<p>VYSLEDNA ZOSTAVA</p>
 					<FontAwesomeIcon className="mx-2 self-center" icon={faPollH} />
 				</Button>
