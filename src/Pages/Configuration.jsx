@@ -72,13 +72,17 @@ export default class Configuration extends React.Component {
 		const data = []
 		this.setState({ fetchedData: data })
 	}
-
-	fetchData = async (productType) => {
-		const response = await axios.get(`https://frag-builder.herokuapp.com/api/components/${productType}/${this.state.search}`)
-		const data = []
-		console.log(response.data.headers)
-		response.data.map(item => data.push(item))
-		this.setState({ fetchedData: data })
+	
+	fetchData = (productType) => {
+		const self = this
+		axios.get(`https://frag-builder.herokuapp.com/api/components/${productType}/${this.state.search}`)
+			.then(function(res) {
+				console.log(res.data)
+				self.setState({ fetchedData: res.data })
+			})
+			.catch(function(err) {
+				console.log(err)
+			})
 	}
 
 	handleSearch = event => {

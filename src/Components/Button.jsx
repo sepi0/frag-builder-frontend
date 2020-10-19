@@ -5,6 +5,7 @@ const Button = (props) => {
 	return (
 		<button
 			className={`
+				${props.className}
 				flex
 				flex-row
 				transition duration-300 ease-in-out
@@ -12,14 +13,13 @@ const Button = (props) => {
 				px-4
 				border-2
 				bg-white
-				${props.className}
 				text-black
 				hover:text-white
 				font-bold
 				rounded
 				focus:outline-none
 				cursor-pointer
-				`}
+			`}
 			onClick={props.onClick}
 		>
 			{props.children}
