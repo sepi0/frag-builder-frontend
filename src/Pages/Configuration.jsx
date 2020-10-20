@@ -32,14 +32,14 @@ export default class Configuration extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			fetchedData: [],
+			fetchedProducts: [],
 			inCart: [],
-			search: [],
-			phone: "",
-			email: "",
-			name: "",
+			searchValue: "",
+			userPhone: "",
+			userEmail: "",
+			userName: "",
 			totalPrice: 0,
-			browsing: this.productTypes[0],
+			currentlyBrowsing: this.productTypes[0],
 			configuratorStep: 0,
 			configuratorProgress: {
 				0: "Základné dosky",
@@ -57,28 +57,28 @@ export default class Configuration extends React.Component {
 	}
 
 	forwardProgress = () => {
-		this.setState({
-			configuratorStep: this.state.configuratorStep + 1
-		})
+		this.setState({ configuratorStep: this.state.configuratorStep + 1 }, () => this.emptyData())
 	}
 
 	backwardProgress = () => {
-		this.setState({
-			configuratorStep: this.state.configuratorStep - 1
-		})
+		this.setState({ configuratorStep: this.state.configuratorStep - 1 }, () => this.emptyData())
 	}
 
 	emptyData = () => {
-		const data = []
-		this.setState({ fetchedData: data })
+		this.setState({ fetchedProducts: [] }, () => this.emptySearch())
 	}
-	
-	fetchData = (productType) => {
+
+	emptySearch = () => {
+		this.setState({ searchValue: "" }, () => console.log(this.state.searchValue))
+	}
+
+
+	fetchProducts = (productType) => {
 		const self = this
-		axios.get(`https://frag-builder.herokuapp.com/api/components/${productType}/${this.state.search}`)
+		axios.get(`https://frag-builder.herokuapp.com/api/components/${productType}/${this.state.searchValue}`)
 			.then(function(res) {
 				console.log(res.data)
-				self.setState({ fetchedData: res.data })
+				self.setState({ fetchedProducts: res.data })
 			})
 			.catch(function(err) {
 				console.log(err)
@@ -86,19 +86,19 @@ export default class Configuration extends React.Component {
 	}
 
 	handleSearch = event => {
-		this.setState({ search: event.target.value }, () => this.fetchData(this.productTypes[this.state.configuratorStep]))
+		this.setState({ searchValue: event.target.value }, () => this.fetchProducts(this.productTypes[this.state.configuratorStep]))
 	}
 
 	handleEmail = event => {
-		this.setState({ email: event.target.value })
+		this.setState({ userEmail: event.target.value })
 	}
 
 	handleName = event => {
-		this.setState({ name: event.target.value })
+		this.setState({ userName: event.target.value })
 	}
 
 	handlePhone = event => {
-		this.setState({ phone: event.target.value })
+		this.setState({ userPhone: event.target.value })
 	}
 
 	handleTotal = () => {
@@ -108,9 +108,7 @@ export default class Configuration extends React.Component {
 	}
 
 	addToCart = (product) => {
-		const cart = this.state.inCart
-		cart.push(product)
-		cart.concat(this.state.inCart)
+		const cart = this.state.inCart.concat(product)
 		this.setState({
 			inCart: cart
 		}, this.handleTotal)
@@ -127,14 +125,13 @@ export default class Configuration extends React.Component {
 
 	sendOrder = async (event) => {
 		event.preventDefault()
-
 		const orderId = (Math.floor(1000000 + Math.random() * 9000000)).toString()
 		const json = JSON.stringify({
 			orderId: orderId,
-			components: this.state.inCart.map(item => item.id).toString(),
-			name: this.state.name,
-			email: this.state.email,
-			phone: this.state.phone
+			components: this.state.inCart.join(),
+			name: this.state.userName,
+			email: this.state.userEmail,
+			phone: this.state.userPhone
 		})
 
 		await axios.post(
@@ -177,7 +174,7 @@ export default class Configuration extends React.Component {
 		if (this.state.configuratorStep < 9) {
 			return (
 				<div id="vysledky" className=" self-center grid  grid-cols-2  gap-4 md:grid-cols-3  lg:grid-cols-4  xl:grid-cols-5  container sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto my-10">
-					{this.state.fetchedData.map((item, key) =>
+					{this.state.fetchedProducts.map((item, key) =>
 						<div key={key} className="font-mulish flex flex-col justify-between text-center  p-10  bg-white border-1 shadow full">
 							<h3>{item.model.toUpperCase()}</h3>
 							<div className={"my-3 mx-auto"}>
@@ -264,6 +261,7 @@ export default class Configuration extends React.Component {
 					<div className=" flex  flex-row  justify-center">
 						<FontAwesomeIcon className="self-center" icon={faSearch}></FontAwesomeIcon>
 						<Input
+							value={this.state.searchValue}
 							onChange={this.handleSearch}
 							placeholder="začni hľadať">
 						</Input>

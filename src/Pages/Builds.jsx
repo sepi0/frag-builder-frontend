@@ -67,9 +67,7 @@ export default class Builds extends React.Component {
 	}
 
 	addToCart = (product) => {
-		const cart = this.state.inCart
-		cart.push(product)
-		cart.concat(this.state.inCart)
+		const cart = this.state.inCart.concat(product)
 		this.setState({
 			inCart: cart
 		}, this.handleTotal)
@@ -123,7 +121,7 @@ export default class Builds extends React.Component {
 		const orderId = (Math.floor(1000000 + Math.random() * 9000000)).toString()
 		const json = JSON.stringify({
 			orderId: orderId,
-			components: this.state.inCart.map(item => item.model).toString(),
+			components: this.state.inCart.join(),
 			name: this.state.name,
 			email: this.state.email,
 			phone: this.state.phone

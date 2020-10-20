@@ -15,7 +15,7 @@ const OrderForm = (props) => {
 				</div>
 				<div className="self-center border-carbon-500">
 					<p>Telefon</p>
-					<Input onChange={props.onChangePhone} placeholder="Prosím zadaj tvoje číslo.." type="number"/>
+					<Input onChange={props.onChangePhone} placeholder="Prosím zadaj tvoje číslo.."/>
 				</div>
 				<div className="self-center py-3">
 					{props.children}
