@@ -45,6 +45,9 @@ module.exports = {
         },
         fragblue: {
           '500': '#0F3BD8'
+        },
+        brightpink : {
+          '500': '#CE27FF'
         }
       }
     },

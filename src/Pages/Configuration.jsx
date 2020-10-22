@@ -173,12 +173,12 @@ export default class Configuration extends React.Component {
 	products = () => {
 		if (this.state.configuratorStep < 9) {
 			return (
-				<div id="vysledky" className=" self-center grid  grid-cols-2  gap-4 md:grid-cols-3  lg:grid-cols-4  xl:grid-cols-5  container sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto my-10">
+				<div id="vysledky" className="grid  grid-cols-2  gap-4 md:grid-cols-3  lg:grid-cols-4  xl:grid-cols-5 container mx-auto my-10">
 					{this.state.fetchedProducts.map((item, key) =>
 						<div key={key} className="font-mulish flex flex-col justify-between text-center  p-10  bg-white border-1 shadow full">
 							<h3>{item.model.toUpperCase()}</h3>
 							<div className={"my-3 mx-auto"}>
-								<Button className={"border-babyblue-500 hover:bg-babyblue-500"} onClick={() => this.addToCart(item)}>
+								<Button className={"border-carbon-500 hover:bg-carbon-500"} onClick={() => this.addToCart(item)}>
 									<FontAwesomeIcon className="mx-1 self-center" icon={faShoppingCart} />
 									{item.price} €
 								</Button>
@@ -194,7 +194,7 @@ export default class Configuration extends React.Component {
 		if (this.state.configuratorStep > 0) {
 			return (
 				<Button
-					className={"border-aquamarine-500 hover:bg-aquamarine-500"}
+					className={"border-babyblue-500 hover:bg-babyblue-500"}
 					onClick={this.backwardProgress}>
 					<FontAwesomeIcon className="mx-2 self-center" icon={faArrowLeft} />
 					<p>BACK</p>
@@ -207,7 +207,7 @@ export default class Configuration extends React.Component {
 		if (this.state.configuratorStep < 8) {
 			return (
 				<Button
-					className={"border-bubblegumred-500 hover:bg-bubblegumred-500"}
+					className={"border-brightpink-500 hover:bg-brightpink-500"}
 					onClick={this.forwardProgress}>
 					<p>NEXT</p>
 					<FontAwesomeIcon className="mx-2 self-center" icon={faArrowRight} />
@@ -275,17 +275,17 @@ export default class Configuration extends React.Component {
 					<div className=" text-center text-carbon-500 text-2xl font-mulish font-bold">
 						<h1>CELKOVO: {this.state.totalPrice}€</h1>
 					</div>
-					<div id="naspat-dalej" className=" flex  flex-row  justify-center  font-mulish">
-						<div className={"mx-4 my-5"}>
+					<div id="naspat-dalej" className=" flex  flex-row  justify-center  font-mulish my-10 space-x-10">
+						<div>
 							{this.backButton()}
 						</div>
-						<div className={"mx-4 my-5"}>
+						<div>
 							{this.nextButton()}
 							{this.resultButton()}
 						</div>
 					</div>
 				</div>
-				<div className="mx-auto overflow-y-scroll h-720p w-720p mb-10">
+				<div className="mx-auto overflow-y-scroll h-720p md:w-720p mb-10">
 					{this.products()}
 					{this.finalConfiguration()}
 					<div>

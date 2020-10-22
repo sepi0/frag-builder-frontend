@@ -131,7 +131,8 @@ button { /* 1 */
  * Correct the inability to style clickable types in iOS and Safari.
  */
 
-button {
+button,
+[type="button"] {
   -webkit-appearance: button;
 }
 
@@ -139,7 +140,8 @@ button {
  * Remove the inner border and padding in Firefox.
  */
 
-button::-moz-focus-inner {
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -148,7 +150,8 @@ button::-moz-focus-inner {
  * Restore the focus styles unset by the previous rule.
  */
 
-button:-moz-focusring {
+button:-moz-focusring,
+[type="button"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -414,6 +417,12 @@ svg {
   }
 }
 
+.space-x-10 > :not(template) ~ :not(template) {
+  --space-x-reverse: 0;
+  margin-right: calc(2.5rem * var(--space-x-reverse));
+  margin-left: calc(2.5rem * calc(1 - var(--space-x-reverse)));
+}
+
 .appearance-none {
   -webkit-appearance: none;
           appearance: none;
@@ -443,10 +452,10 @@ svg {
   background-color: rgba(255, 255, 255, var(--bg-opacity));
 }
 
-.hover\:bg-aquamarine-500:hover {
+.hover\:bg-carbon-500:hover {
   --bg-opacity: 1;
-  background-color: #00FFBA;
-  background-color: rgba(0, 255, 186, var(--bg-opacity));
+  background-color: #343434;
+  background-color: rgba(52, 52, 52, var(--bg-opacity));
 }
 
 .hover\:bg-carbon-900:hover {
@@ -465,6 +474,12 @@ svg {
   --bg-opacity: 1;
   background-color: #0DBCFF;
   background-color: rgba(13, 188, 255, var(--bg-opacity));
+}
+
+.hover\:bg-brightpink-500:hover {
+  --bg-opacity: 1;
+  background-color: #CE27FF;
+  background-color: rgba(206, 39, 255, var(--bg-opacity));
 }
 
 .bg-obrazok-zostavy {
@@ -495,12 +510,6 @@ svg {
   background-size: contain;
 }
 
-.border-aquamarine-500 {
-  --border-opacity: 1;
-  border-color: #00FFBA;
-  border-color: rgba(0, 255, 186, var(--border-opacity));
-}
-
 .border-carbon-500 {
   --border-opacity: 1;
   border-color: #343434;
@@ -523,6 +532,12 @@ svg {
   --border-opacity: 1;
   border-color: #0DBCFF;
   border-color: rgba(13, 188, 255, var(--border-opacity));
+}
+
+.border-brightpink-500 {
+  --border-opacity: 1;
+  border-color: #CE27FF;
+  border-color: rgba(206, 39, 255, var(--border-opacity));
 }
 
 .rounded {
@@ -669,11 +684,6 @@ svg {
   margin-right: 0.75rem;
 }
 
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -691,10 +701,6 @@ svg {
 
 .mb-2 {
   margin-bottom: 0.5rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
 }
 
 .mb-5 {
@@ -833,10 +839,6 @@ svg {
   color: rgba(255, 255, 255, var(--text-opacity));
 }
 
-.w-360p {
-  width: 640px;
-}
-
 .w-720p {
   width: 1280px;
 }
@@ -939,11 +941,6 @@ svg {
   .sm\:text-6xl {
     font-size: 4rem;
   }
-
-  .sm\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 @media (min-width: 768px) {
@@ -954,10 +951,6 @@ svg {
 
   .md\:text-2xl {
     font-size: 1.5rem;
-  }
-
-  .md\:text-4xl {
-    font-size: 2.25rem;
   }
 
   .md\:mx-auto {
@@ -971,6 +964,10 @@ svg {
 
   .md\:w-360p {
     width: 640px;
+  }
+
+  .md\:w-720p {
+    width: 1280px;
   }
 
   .md\:grid-cols-2 {
@@ -988,11 +985,6 @@ svg {
     font-size: 2.25rem;
   }
 
-  .lg\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .lg\:gap-4 {
     grid-gap: 1rem;
     gap: 1rem;
@@ -1008,11 +1000,6 @@ svg {
 }
 
 @media (min-width: 1280px) {
-
-  .xl\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
 
   .xl\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));

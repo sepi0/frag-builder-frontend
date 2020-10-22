@@ -7,7 +7,7 @@ import {faFacebook} from "@fortawesome/free-brands-svg-icons";
 export default function Navbar() {
 	return (
 		<nav className="bg-black text-white font-mulish font-bold content-center mx-auto p-4">
-			<div className={"flex flex-row justify-between  w-720p mx-auto"}>
+			<div className={"flex flex-row justify-between container mx-auto md:w-720p"}>
 				<div className="items-center">
 					<Link to="/">
 						<h1>.FRAG COMPUTERS</h1>
