@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "db5dd7eb6c0d22a5e346cabb0fcb0bb9",
+    "revision": "e1fe53cf8faa11a64cc3b700d0222614",
     "url": "/frag-builder-frontend/index.html"
   },
   {
-    "revision": "dead22a0f108d47f412c",
-    "url": "/frag-builder-frontend/static/css/main.86f7c080.chunk.css"
+    "revision": "69bd7e89466017aac01e",
+    "url": "/frag-builder-frontend/static/css/main.eabef2b7.chunk.css"
   },
   {
-    "revision": "9a5606b87ba3a1978d6c",
-    "url": "/frag-builder-frontend/static/js/2.519d3a11.chunk.js"
+    "revision": "2018ebd70b56427aa4fb",
+    "url": "/frag-builder-frontend/static/js/2.12af63f9.chunk.js"
   },
   {
     "revision": "a3c66bc87fa121efed0250fdac2dfa2b",
-    "url": "/frag-builder-frontend/static/js/2.519d3a11.chunk.js.LICENSE.txt"
+    "url": "/frag-builder-frontend/static/js/2.12af63f9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "dead22a0f108d47f412c",
-    "url": "/frag-builder-frontend/static/js/main.d0703a9f.chunk.js"
+    "revision": "69bd7e89466017aac01e",
+    "url": "/frag-builder-frontend/static/js/main.ed4113fa.chunk.js"
   },
   {
     "revision": "83293d06e36c0c38b1ee",
