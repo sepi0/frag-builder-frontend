@@ -10,14 +10,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: (theme) => ({
-        aquaspikes: "url('./media/aquaspikes.svg')",
-        purplespikes: "url('./media/purplespikes.svg')",
-        "bublinky-purple-blue": "url('./media/bublinky-purple-blue.svg')",
         "obrazok-zostavy": "url('./media/zostavy.svg')",
         "obrazok-konfigurator": "url('./media/konfigurator.svg')",
-        bubblewave: "url('./media/bublewave.svg')",
-        tetris1: "url('./media/tetris1.svg')",
-        tetris2: "url('./media/tetris2.svg')",
       }),
       colors: {
         aquamarine: {

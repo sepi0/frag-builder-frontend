@@ -1,71 +1,86 @@
-[{
-    "zostava1": {
-        "model": "AMD Type-C",
-        "zakladnaDoska": "ASUS PRIME B450M-K - Základná doska",
-        "procesor": "AMD RYZEN 3 3200G - Procesor",
-        "grafickaKarta": "",
-        "ram": ["HyperX 8GB KIT DDR4 3200 MHz CL16 FURY series - Operačná pamäť", ""],
-        "ssd": ["ADATA XPG SX6000 Lite SSD 512 GB - SSD disk"],
-        "hdd": [""],
-        "skrinka": "Cooler Master MasterBox Q300L - PC skrinka",
-        "zdroj": "SilverStone Strider Essential 80Plus ST40F-ES230 400 W - PC zdroj",
-        "chladenie": "",
-        "cena": "389"
-    },
+{
+  "zostava1": {
+    "model": "AMD Type-C",
+    "zakladnaDoska": "ASUS PRIME B450M-K - Základná doska",
+    "procesor": "AMD RYZEN 3 3200G - Procesor",
+    "grafickaKarta": "",
+    "ram": [
+      "HyperX 8GB KIT DDR4 3200 MHz CL16 FURY series - Operačná pamäť",
+      ""
+    ],
+    "ssd": ["ADATA XPG SX6000 Lite SSD 512 GB - SSD disk"],
+    "hdd": [""],
+    "skrinka": "Cooler Master MasterBox Q300L - PC skrinka",
+    "zdroj": "SilverStone Strider Essential 80Plus ST40F-ES230 400 W - PC zdroj",
+    "chladenie": "",
+    "cena": "389"
+  },
 
-    "zostava2": {
-        "model": "AMD Type-A",
-        "zakladnaDoska": "ASUS PRIME B550M-A - Základná doska",
-        "procesor": "AMD RYZEN 5 3600 - Procesor",
-        "grafickaKarta": "MSI GeForce RTX 2070 SUPER VENTUS GP OC - Grafická karta",
-        "ram": ["Crucial 16GB KIT DDR4 3600 MHz CL16 Ballistix Black RGB - Operačná pamäť", ""],
-        "ssd": ["Apacer AS2280P4 512 GB - SSD disk"],
-        "hdd": [""],
-        "skrinka": "Zalman Z9 NEO Plus White - PC skrinka",
-        "zdroj": "EVGA 600 BR - PC zdroj",
-        "chladenie": "",
-        "cena": "1059"
-    },
+  "zostava2": {
+    "model": "AMD Type-A",
+    "zakladnaDoska": "ASUS PRIME B550M-A - Základná doska",
+    "procesor": "AMD RYZEN 5 3600 - Procesor",
+    "grafickaKarta": "MSI GeForce RTX 2070 SUPER VENTUS GP OC - Grafická karta",
+    "ram": [
+      "Crucial 16GB KIT DDR4 3600 MHz CL16 Ballistix Black RGB - Operačná pamäť",
+      ""
+    ],
+    "ssd": ["Apacer AS2280P4 512 GB - SSD disk"],
+    "hdd": [""],
+    "skrinka": "Zalman Z9 NEO Plus White - PC skrinka",
+    "zdroj": "EVGA 600 BR - PC zdroj",
+    "chladenie": "",
+    "cena": "1059"
+  },
 
-    "zostava3": {
-        "model": "AMD Type-B",
-        "zakladnaDoska": "MSI B450M PRO-M2 MAX - Základná doska",
-        "procesor": "AMD RYZEN 5 2600 - Procesor",
-        "grafickaKarta": "MSI GeForce GTX 1660 SUPER VENTUS XS OC - Grafická karta",
-        "ram": ["Patriot Viper4 Series 16GB KIT DDR4 3200Mhz CL16 - Operačná pamäť", ""],
-        "ssd": ["Apacer AS2280P4 512 GB - SSD disk"],
-        "hdd": [""],
-        "skrinka": "Zalman Z9 NEO Plus White - PC skrinka",
-        "zdroj": "EVGA 600 BR - PC zdroj",
-        "chladenie": "",
-        "cena": "749"
-    },
+  "zostava3": {
+    "model": "AMD Type-B",
+    "zakladnaDoska": "MSI B450M PRO-M2 MAX - Základná doska",
+    "procesor": "AMD RYZEN 5 2600 - Procesor",
+    "grafickaKarta": "MSI GeForce GTX 1660 SUPER VENTUS XS OC - Grafická karta",
+    "ram": [
+      "Patriot Viper4 Series 16GB KIT DDR4 3200Mhz CL16 - Operačná pamäť",
+      ""
+    ],
+    "ssd": ["Apacer AS2280P4 512 GB - SSD disk"],
+    "hdd": [""],
+    "skrinka": "Zalman Z9 NEO Plus White - PC skrinka",
+    "zdroj": "EVGA 600 BR - PC zdroj",
+    "chladenie": "",
+    "cena": "749"
+  },
 
-    "zostava4": {
-        "model": "Intel Type-A",
-        "zakladnaDoska": "ASUS PRIME Z490M-PLUS - Základná doska",
-        "procesor": "Intel Core i5-10400F - Procesor",
-        "grafickaKarta": "MSI GeForce RTX 2070 SUPER VENTUS GP OC - Grafická karta",
-        "ram": ["Patriot Viper4 Series 16GB KIT DDR4 3200Mhz CL16 - Operačná pamäť", ""],
-        "ssd": ["Apacer AS2280P4 512 GB - SSD disk"],
-        "hdd": [""],
-        "skrinka": "Zalman Z9 NEO Plus White - PC skrinka",
-        "zdroj": "EVGA 600 BR - PC zdroj",
-        "chladenie": "",
-        "cena": "1029"
-    },
+  "zostava4": {
+    "model": "Intel Type-A",
+    "zakladnaDoska": "ASUS PRIME Z490M-PLUS - Základná doska",
+    "procesor": "Intel Core i5-10400F - Procesor",
+    "grafickaKarta": "MSI GeForce RTX 2070 SUPER VENTUS GP OC - Grafická karta",
+    "ram": [
+      "Patriot Viper4 Series 16GB KIT DDR4 3200Mhz CL16 - Operačná pamäť",
+      ""
+    ],
+    "ssd": ["Apacer AS2280P4 512 GB - SSD disk"],
+    "hdd": [""],
+    "skrinka": "Zalman Z9 NEO Plus White - PC skrinka",
+    "zdroj": "EVGA 600 BR - PC zdroj",
+    "chladenie": "",
+    "cena": "1029"
+  },
 
-    "zostava5": {
-        "model": "Intel Type-B",
-        "zakladnaDoska": "ASUS PRIME B460M-K - Základná doska",
-        "procesor": "Intel Core i5-10400F - Procesor",
-        "grafickaKarta": "MSI GeForce GTX 1660 SUPER VENTUS XS OC - Grafická karta",
-        "ram": ["Patriot Viper4 Series 16GB KIT DDR4 3200Mhz CL16 - Operačná pamäť", ""],
-        "ssd": ["Apacer AS2280P4 512 GB - SSD disk"],
-        "hdd": [""],
-        "skrinka": "Zalman Z9 NEO Plus White - PC skrinka",
-        "zdroj": "EVGA 600 BR - PC zdroj",
-        "chladenie": "",
-        "cena": "759"
-    }
-}]
+  "zostava5": {
+    "model": "Intel Type-B",
+    "zakladnaDoska": "ASUS PRIME B460M-K - Základná doska",
+    "procesor": "Intel Core i5-10400F - Procesor",
+    "grafickaKarta": "MSI GeForce GTX 1660 SUPER VENTUS XS OC - Grafická karta",
+    "ram": [
+      "Patriot Viper4 Series 16GB KIT DDR4 3200Mhz CL16 - Operačná pamäť",
+      ""
+    ],
+    "ssd": ["Apacer AS2280P4 512 GB - SSD disk"],
+    "hdd": [""],
+    "skrinka": "Zalman Z9 NEO Plus White - PC skrinka",
+    "zdroj": "EVGA 600 BR - PC zdroj",
+    "chladenie": "",
+    "cena": "759"
+  }
+}
